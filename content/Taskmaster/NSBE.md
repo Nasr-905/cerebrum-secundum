@@ -1,0 +1,7 @@
+- BFN
+- Salesforce
+- Manulife
+- RBC
+	- Benefits done by Tanya
+	- JD handles payments
+- Huda

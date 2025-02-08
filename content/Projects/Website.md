@@ -18,4 +18,6 @@
 		- can't use the others BC they're meant for infrequent access, archive may take hours for access
 	- Cloudflare R2
 		- Free 10gb
-		- Then 0.015/GB/month
+		- Then 0.015/GB/mont
+- self-hosted password manager
+- port all text-based drive items to obsidian
