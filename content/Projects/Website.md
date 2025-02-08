@@ -1,0 +1,21 @@
+- Quartz v4 as a static site generator
+- code highlighting
+- comments
+- multiple language support
+- highlighted blocks of text
+- card files
+- Pictures and videos
+- notes
+- contacts
+	- extend the contact feature to also show social media handles
+	- when you click on the handle, it takes you to your chat history
+	- tag images with contacts to show who's in the image
+- use ADB over WiFi to sync messages
+- music
+- storage using "cloud object storage"
+	- Google Cloud
+		- Standard: Columbus (`us-east5`)$0.020/GB/month
+		- can't use the others BC they're meant for infrequent access, archive may take hours for access
+	- Cloudflare R2
+		- Free 10gb
+		- Then 0.015/GB/month

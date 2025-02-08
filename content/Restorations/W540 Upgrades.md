@@ -1,0 +1,17 @@
+- Trackpacd
+- 32GB RAM
+    - 8x4 PC3-12800S (SODIMM) 1600MHz DDR3L, non-parity, dual-channel capable 1.35V
+- Main Drive Replacement
+    - Form Factor: 2.5", 7mm or 9.5mm height.
+    - Interface: SATA III (6.0 Gb/s).
+- DVD SSD Replacement
+    - Form Factor: 2.5", 7mm or 9.5mm height (with Ultrabay adapter).
+    - Interface: SATA III (6.0 Gb/s).
+    - Adapter: https://www.amazon.ca/Bfenown-Replacement-Thinkpad-Internal-Optical/dp/B082K7F9RG?dib=eyJ2IjoiMSJ9.BZG5F2P0uuOdbP26QhIlDBgf94BLwQXhMiP9pTR9mMCj-gbvm1-iT03vbrzUlLcXSBC0zvWf6PN3KPCq3EJ1awRqV9v8jTKeqVBg6ppFwcjGhXUIwodVHXfj6iCanYYQ3gf_9pTDuljODwf6lZ59rV062Te9uc_8HXceBF_xKdAD9wY-SDRGCP2Z80Wiv8zHcSr7vuRckpd72_VFX1A7q3PvJZbBpvI-lFScZolQEt55DTP254RTUFph1YmVcmPYO1lOayU6DMCL9ghj82L1J0DPXOUqkjdnAAP14ZHgiwqGUot_Ft87o7IuFnpJvCfkOb0lJ-7qXydfdaz2K2WlfA.tNsMx90sLhkeF4jU1bPvZAlnc1s6HEeJbwpP8qqin48&dib_tag=se&keywords=ultrabay&qid=1735703910&sr=8-1&th=1
+- M.2 SSD
+    - Form Factor: M.2 2242 (42mm length; shorter than standard 2280 drives).
+    - Interface: SATA III (not NVMe).
+- 9-cell battery
+- New Screen: 15.5" (394mm) 3K (2880x1620), 350 nits, 1000:1 contrast ratio, IPS
+- external battery charger
+- 170W charger

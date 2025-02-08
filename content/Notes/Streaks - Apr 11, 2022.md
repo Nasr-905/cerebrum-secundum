@@ -1,0 +1,2 @@
+- 40 days (March 2 to April 11)
+- 80 days (April 12 to June 30)
