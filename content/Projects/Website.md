@@ -5,11 +5,13 @@
 		- interactive portfolio
 		- downloadable resume
 	- anime
+	- Notes
 	- poetry
 	- Books
 	- projects
 	- music
 	- Blog
+	- Archives
 - code highlighting
 - comments
 - multiple language support

@@ -33,6 +33,7 @@
   }
   .page > #quartz-body {
     .sidebar.left {
+      overflow-y: clip;
       max-height: 100vh;
       display: flex;
       flex-wrap: wrap;
