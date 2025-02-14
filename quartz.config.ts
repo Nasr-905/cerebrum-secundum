@@ -8,8 +8,8 @@ import * as Plugin from "./quartz/plugins"
  */
 const config: QuartzConfig = {
   configuration: {
-    pageTitle: "🪴 Quartz 4.0",
-    pageTitleSuffix: "",
+    pageTitle: "❯ NAS",
+    pageTitleSuffix: " | Cerebrum Secundum",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
@@ -19,7 +19,7 @@ const config: QuartzConfig = {
     baseUrl: "quartz.jzhao.xyz",
     ignorePatterns: ["private", "templates", ".obsidian"],
     defaultDateType: "created",
-    generateSocialImages: false,
+    generateSocialImages: true, // controls whether social media images are automatically generated for the content
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
@@ -28,28 +28,29 @@ const config: QuartzConfig = {
         body: "Source Sans Pro",
         code: "IBM Plex Mono",
       },
+      // All the colors get overriden by the theme
       colors: {
         lightMode: {
-          light: "#faf8f8",
-          lightgray: "#e5e5e5",
-          gray: "#b8b8b8",
-          darkgray: "#4e4e4e",
-          dark: "#2b2b2b",
-          secondary: "#284b63",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#fff23688",
+          light: "", // page background
+          lightgray: "", // borders, inline code highlight, search
+          gray: "", // header line tables, unvisited graph node, graph links on hover
+          darkgray: "", // body text 
+          dark: "", // header text, icons, inline and block code text, Layout header (explorer, graph view, table of contents) text, note names in explorer text
+          secondary: "", // internal/external links, current graph node 
+          tertiary: "", // internal/external links hover, visited graph node
+          highlight: " `", // internal link background, footnote number link highlight
+          textHighlight: "", // markdown highlighted text          
         },
         darkMode: {
-          light: "#161618",
-          lightgray: "#393639",
-          gray: "#646464",
-          darkgray: "#d4d4d4",
-          dark: "#ebebec",
-          secondary: "#7b97aa",
-          tertiary: "#84a59d",
-          highlight: "rgba(143, 159, 169, 0.15)",
-          textHighlight: "#b3aa0288",
+          light: "",
+          lightgray: "",
+          gray: "",
+          darkgray: "",
+          dark: "",
+          secondary: "",
+          tertiary: "",
+          highlight: "",
+          textHighlight: "",
         },
       },
     },

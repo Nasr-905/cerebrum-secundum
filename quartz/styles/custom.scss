@@ -1,3 +1,106 @@
 @use "./base.scss";
+@use "./variables.scss" as *;
+@use "quartz-themes";
+@use "quartz-themes/__CONVERTER/__OUTPUT/material-gruvbox/_index.scss";
+
 
 // put your custom CSS here!
+@media all and ($mobile) {
+  .page > #quartz-body {
+    .sidebar.left {
+      & > .explorer {
+        flex: 1;
+        &:has(> button.collapsed) {
+          overflow-x: clip;
+        }
+      }
+    }
+  }
+  .search > #search-container > #search-space > #search-layout {
+    &[data-preview] > #results-container {
+      flex: unset;
+      width: 100%;
+    }
+    > #preview-container {
+      display: none;
+    }
+  }
+}
+
+@media all and not ($mobile) {
+  header {
+    display: block;
+  }
+  .page > #quartz-body {
+    .sidebar.left {
+      max-height: 100vh;
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-content: flex-start;
+      & > * {
+        flex-basis: 100%;
+        margin: auto 0;
+      }
+      & > div.search {
+        flex-basis: 70%;
+      }
+      & > button.darkmode {
+        flex-basis: 10%;
+        margin-left: auto;
+      }
+      & > div.explorer {
+        max-height: 85%;
+      }
+    }
+  }
+  .search > #search-container > #search-space > #search-layout > #preview-container {
+    width: 100%;
+  }
+}
+
+.social-icon {
+  display: inline-flex;
+  color: var(--dark);
+  transition: color 0.2s ease;
+  margin: 0.5rem 0 0;
+  width: 24px;
+  height: 24px;
+  & svg {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.social-icon:hover {
+  color: var(--secondary);
+}
+
+/* HEADER AT TOP OF WEBSITE */
+.marquee {
+    background-color: black;
+    overflow: hidden;
+    width: 100%;
+    font-family: monospace;
+    white-space: nowrap;
+    height: 40px;
+  }
+  
+  .marquee p {
+    color: white;
+    font-weight: 700;
+    animation: loopText 60s infinite linear;
+    line-height: unset;
+  }
+  
+  @keyframes loopText {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+      transform: translateX(-171.25%);
+    }
+  }
+  
+  /* HEADER AT TOP OF WEBSITE */
