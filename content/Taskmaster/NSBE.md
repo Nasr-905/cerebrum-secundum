@@ -5,3 +5,10 @@
 	- Benefits done by Tanya
 	- JD handles payments
 - Huda
+
+- Run of show
+	- when are Submission
+- Judges
+	- 
+- images of 
+- devpost
