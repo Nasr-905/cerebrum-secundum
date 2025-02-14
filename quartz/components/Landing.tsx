@@ -1,5 +1,6 @@
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import landingStyle from "./styles/landing.scss"
+import Recents from "./RecentNotes"
 
 export const TOTAL_CARDS = 8
 
@@ -21,11 +22,11 @@ export const getCards = (isIndex?: boolean) => ({
           </div>
         </a>
       ),
-      Books: (
-        <a href="https://hardcover.app/@Nas" target="_blank">
+      Recipes: (
+        <a href={isIndex ? "/Recipes" : "/"} target="_blank">
           <div class="card card-3">
-            <p class="card-title">Books</p>
-            <p class="card-subhead">What I've read and am currently reading</p>
+            <p class="card-title">Recipes</p>
+            <p class="card-subhead">No promises they're any good</p>
           </div>
         </a>
       ),
@@ -54,18 +55,18 @@ export const getCards = (isIndex?: boolean) => ({
         </a>
       ),
       Blog: (
-        <a href={isIndex ? "/Blog" : "/"} target="_blank">
+        <a href="https://hevy.com/user/n_a_s" target="_blank">
           <div class="card card-7">
-            <p class="card-title">Blog</p>
-            <p class="card-subhead">Written mostly in broken French</p>
+            <p class="card-title">Workout</p>
+            <p class="card-subhead">Every once in a while</p>
           </div>
         </a>
       ),
-      Archives: (
-        <a href={isIndex ? "/Recipes" : "/"} target="_blank">
+      Books: (
+        <a href="https://hardcover.app/@Nas" target="_blank">
           <div class="card card-8">
-            <p class="card-title">Recipes</p>
-            <p class="card-subhead">No promises they're any good</p>
+            <p class="card-title">Books</p>
+            <p class="card-subhead">What I've read and am currently reading</p>
           </div>
         </a>
       ),

@@ -15,6 +15,7 @@ import { QuartzPluginData } from "../plugins/vfile"
 
 import Landing from "./Landing"
 
+import Recent from "./RecentNotes"
 
 interface RenderComponents {
   head: QuartzComponent
@@ -241,6 +242,14 @@ export function renderPage(
 
   const LandingComponent = Landing()
 
+  const RecentNotes = Recent({
+    title: "Latest Updates",
+    limit: 5,
+    showTags: false,
+    linkToMore: false,
+    filter: () => true, // Adjust this as needed
+  })
+
   const lang = componentData.fileData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en"
   const doc = (
     <html lang={lang}>
@@ -259,6 +268,7 @@ export function renderPage(
             <div class="center">
               <div class="page-header">
               {slug === "index" && <LandingComponent {...componentData} />}
+              {slug === "index" && <RecentNotes {...componentData} />}
               {slug !== "index" && ( <>
                 <Header {...componentData}>
                   {header.map((HeaderComponent) => (
