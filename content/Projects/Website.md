@@ -1,4 +1,15 @@
 - Quartz v4 as a static site generator
+- split site into different sections with different themes
+	- homepage
+		- what I'm currently working on
+		- interactive portfolio
+		- downloadable resume
+	- anime
+	- poetry
+	- Books
+	- projects
+	- music
+	- Blog
 - code highlighting
 - comments
 - multiple language support
