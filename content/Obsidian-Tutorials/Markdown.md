@@ -86,17 +86,17 @@ Without it
 #### Images
 `![Image|widthxheight](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)`
 
-![image|widthxheight](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)
+ ![image|widthxheight](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg) 
 just specifying the width preserves the aspect ratio
 #### Audio
 `![Anthem](anthem.mp3)`
-![Anthem](anthem.mp3)
+![Anthem](anthem.mp3) 
 Doesn't work with external audio
 
 #### PDF
 `![W540](https://psref.lenovo.com/syspool/Sys/PDF/withdrawnbook/ThinkPad_W540.pdf)`
 
-![[ThinkPad_W540.pdf#height=200]]
+![[ThinkPad_W540.pdf#height=200]] 
 
 External PDFs don't work either :(
 
@@ -108,7 +108,7 @@ External PDFs don't work either :(
 
 `![list](Markdown.md#^my-list-id)`
 
-![list](Markdown.md#^my-list-id)
+![list](Markdown.md#^my-list-id) 
 
 #### Embed Search Results
 
@@ -126,7 +126,7 @@ Uses the [iframe](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ifra
 ```md
 ![](https://www.youtube.com/watch?v=NnTvZWp5Q7o)
 ```
-![](https://www.youtube.com/watch?v=NnTvZWp5Q7o)
+![](https://www.youtube.com/watch?v=NnTvZWp5Q7o) 
 
 ##### Tweets
 ```
@@ -206,31 +206,42 @@ function fancyAlert(arg) {
 ```
 Starting 
 ```
-```{language code}
+```{language code} 
 ```
 [Supported Languages](https://prismjs.com/#supported-languages)
 
 ## Footnotes
 ```
-This is a simple footnote[^1].
+This is a simple footnote[^1]
 
-[^1]: This is the referenced text.
-[^2]: Add 2 spaces at the start of each new line.
-  This lets you write footnotes that span multiple lines.
-[^note]: Named footnotes still appear as numbers, but can make it easier to identify and link references.
-```
-This is a simple footnote[^1].
+This is one footnote[^2]
+
 This is another footnote[^note]
-
+ 
 [^1]: This is the referenced text.
+
 [^2]: Add 2 spaces at the start of each new line.
   This lets you write footnotes that span multiple lines.
+
 [^note]: Named footnotes still appear as numbers, but can make it easier to identify and link references.
 
-```
 You can also use inline footnotes. ^[This is an inline footnote.]
 ```
-You can also use inline footnotes. ^[This is an inline footnote.]
+%% This is a simple footnote[^3] %%
+
+
+%%This is one footnote[^2]%%
+%% This is another footnote[^note] %%
+ 
+%% [^3]: This is the referenced text. %%
+
+
+%%[^2]: Add 2 spaces at the start of each new line.
+  This lets you write footnotes that span multiple lines.%%
+%% [^note]: Named footnotes still appear as numbers, but can make it easier to identify and link references. %%
+%% You can also use inline footnotes. ^[This is an inline footnote.] %%
+
+Footnotes act weird in Quartz search
 ## Comments
 ```
 This is an %%inline%% comment.
@@ -275,11 +286,11 @@ Block comments can span multiple lines.
 | Escape the `|` character<br>when in table mode | ![Engelbar\|100](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg) |
 ```
 
-| First name                                       | Last name                                                                                |
-| ------------------------------------------------ | ---------------------------------------------------------------------------------------- |
-| Max                                              | Planck                                                                                   |
-| Marie                                            | Curie                                                                                    |
-| Escape the pipe character<br>when in table mode. | ![Engelbar\|100](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg) |
+| First name                                       | Last name                                                                                    |
+| ------------------------------------------------ | -------------------------------------------------------------------------------------------- |
+| Max                                              | Planck                                                                                       |
+| Marie                                            | Curie                                                                                        |
+| Escape the pipe character<br>when in table mode. |   ![Engelbar\|100](https://history-computer.com/ModernComputer/Basis/images/Engelbart.jpg)   |
 ### Alignment
 ```
 Left-aligned text | Center-aligned text | Right-aligned text

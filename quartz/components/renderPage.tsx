@@ -13,6 +13,9 @@ import mermaidScript from "./scripts/mermaid.inline"
 import mermaidStyle from "./styles/mermaid.inline.scss"
 import { QuartzPluginData } from "../plugins/vfile"
 
+import Landing from "./Landing"
+
+
 interface RenderComponents {
   head: QuartzComponent
   header: QuartzComponent[]
@@ -236,6 +239,8 @@ export function renderPage(
     </div>
   )
 
+  const LandingComponent = Landing()
+
   const lang = componentData.fileData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en"
   const doc = (
     <html lang={lang}>
@@ -247,11 +252,14 @@ export function renderPage(
             Pirates are evil? The Marines are righteous? These terms have always changed throughout the course of history! Kids who have never seen peace and kids who have never seen war have different values! Those who stand at the top determine what's wrong
           </p>
         </div>
+
         <div id="quartz-root" class="page">
           <Body {...componentData}>
             {LeftComponent}
             <div class="center">
               <div class="page-header">
+              {slug === "index" && <LandingComponent {...componentData} />}
+              {slug !== "index" && ( <>
                 <Header {...componentData}>
                   {header.map((HeaderComponent) => (
                     <HeaderComponent {...componentData} />
@@ -262,6 +270,8 @@ export function renderPage(
                     <BodyComponent {...componentData} />
                   ))}
                 </div>
+                </>
+                )}
               </div>
               <Content {...componentData} />
               <hr />
