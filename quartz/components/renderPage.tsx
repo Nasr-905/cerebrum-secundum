@@ -3,7 +3,7 @@ import { QuartzComponent, QuartzComponentProps } from "./types"
 import HeaderConstructor from "./Header"
 import BodyConstructor from "./Body"
 import { JSResourceToScriptElement, StaticResources } from "../util/resources"
-import { clone, FullSlug, RelativeURL, joinSegments, normalizeHastElement } from "../util/path"
+import { clone, FullSlug, RelativeURL, joinSegments, normalizeHastElement, SimpleSlug } from "../util/path"
 import { visit } from "unist-util-visit"
 import { Root, Element, ElementContent } from "hast"
 import { GlobalConfiguration } from "../cfg"
@@ -243,10 +243,10 @@ export function renderPage(
   const LandingComponent = Landing()
 
   const RecentNotes = Recent({
-    title: "Latest Updates",
+    title: "Recent Blog Posts",
     limit: 5,
-    showTags: false,
-    linkToMore: false,
+    linkToMore: "/Blog" as SimpleSlug,
+    showTags: true,
     filter: () => true, // Adjust this as needed
   })
 

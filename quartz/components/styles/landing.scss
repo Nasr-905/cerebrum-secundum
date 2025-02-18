@@ -6,6 +6,10 @@
     line-height: normal;
   }
   
+  .highlight {
+    background-color: color-mix(in srgb, var(--link-color), #0000 calc(100% - 30%));
+  }
+
   .page-subhead {
     font-size: 14px;
     margin-bottom: 48px;
@@ -35,7 +39,7 @@
   }
   
   .card {
-    background-color: white;
+    background-color: #000000;
     border-radius: 8px;
     aspect-ratio: 8.5 / 11;
     padding: 12px;
@@ -59,7 +63,7 @@
   
   .card-title {
     font-family: "Tiempos", sans-serif;
-    font-size: 36px;
+    font-size: 35px;
     margin: 0 0 8px 0;
     line-height: normal;
     color: white;
@@ -80,23 +84,14 @@
     /* Make card bigger on hover */
   }
 
-  
-  /* CARD COLORS */
-  
-  .card-coming {
-    background: #cfccc4;
-  }
-
   /* General Card Styling */
-  @for $i from 1 through 8 {
+  @for $i from 1 through 9 {
     .card-#{$i} {
-        opacity: 0.5;
         background-size: cover;
         overflow: visible;
         background-image: url("../../static/#{$i}.png");
     }
     .card-#{$i}:hover {
         background-image: url("../../static/#{$i}.gif");
-        opacity: 1;
     }
   }

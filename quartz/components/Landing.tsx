@@ -9,64 +9,72 @@ export const getCards = (isIndex?: boolean) => ({
     Projects: (
         <a href={isIndex ? "/Projects" : "/"} target="_blank">
           <div class="card card-1">
-            <p class="card-title">Projects</p>
-            <p class="card-subhead">What I do instead of touching grass</p>
+            <p class="card-title highlight">Projects</p>
+            <p class="card-subhead highlight">What I do instead of touching grass</p>
           </div>
         </a>
       ),
       Notes: (
         <a href={isIndex ? "/Notes" : "/"} target="_blank">
           <div class="card card-2">
-            <p class="card-title">Notes</p>
-            <p class="card-subhead">Academic and other technical notes</p>
+            <p class="card-title highlight">Notes</p>
+            <p class="card-subhead highlight">Academic and other technical notes</p>
           </div>
         </a>
       ),
       Recipes: (
         <a href={isIndex ? "/Recipes" : "/"} target="_blank">
           <div class="card card-3">
-            <p class="card-title">Recipes</p>
-            <p class="card-subhead">No promises they're any good</p>
+            <p class="card-title highlight">Recipes</p>
+            <p class="card-subhead highlight">No promises they're any good</p>
           </div>
         </a>
       ),
       Poetry: (
         <a href={isIndex ? "/Poetry" : "/"} target="_blank">
           <div class="card card-4">
-            <p class="card-title">Poetry</p>
-            <p class="card-subhead">Most is privated though</p>
+            <p class="card-title highlight">Poetry</p>
+            <p class="card-subhead highlight">Most is privated though</p>
           </div>
         </a>
       ),
       Anime: (
         <a href="https://anilist.co/user/Nasrah/" target="_blank">
           <div class="card card-5">
-            <p class="card-title">Anime</p>
-            <p class="card-subhead">Something else I do instead of touching grass</p>
+            <p class="card-title highlight">Anime</p>
+            <p class="card-subhead highlight">Something else I do instead of touching grass</p>
           </div>
         </a>
       ),
       Music: (
         <a href="https://music.youtube.com/channel/UCGM1FDOnKOf8z5_yPamlRxQ?si=dxI2jS3wnGPdKbXV" target="_blank">
           <div class="card card-6">
-            <p class="card-title">Music</p>
-            <p class="card-subhead">What I've been listening to</p>
+            <p class="card-title highlight">Music</p>
+            <p class="card-subhead highlight">What I've been listening to</p>
           </div>
         </a>
       ),
-      Blog: (
+      Workout: (
         <a href="https://hevy.com/user/n_a_s" target="_blank">
           <div class="card card-7">
-            <p class="card-title">Workout</p>
-            <p class="card-subhead">Every once in a while</p>
+            <p class="card-title highlight">Workout</p>
+            <p class="card-subhead highlight">Every once in a while</p>
           </div>
         </a>
       ),
       Books: (
         <a href="https://hardcover.app/@Nas" target="_blank">
           <div class="card card-8">
-            <p class="card-title">Books</p>
-            <p class="card-subhead">What I've read and am currently reading</p>
+            <p class="card-title highlight">Books</p>
+            <p class="card-subhead highlight">What I've read and am currently reading</p>
+          </div>
+        </a>
+      ),
+      Blog: (
+        <a href="/" target="_blank">
+          <div class="card card-9">
+            <p class="card-title highlight">Blog</p>
+            <p class="card-subhead highlight">Mostly en français</p>
           </div>
         </a>
       ),
@@ -80,7 +88,7 @@ const LandingComponent = (props: QuartzComponentProps) => {
   return (
     <div>
       <div class="content-container">
-        <p class="landing-header">Welcome</p>
+        <p class="landing-header">Welcome, My Name is Nas :)</p>
         <p class="page-subhead">
           <a href="https://github.com/Nasr-905/" target="_blank">
             GitHub
@@ -98,8 +106,8 @@ const LandingComponent = (props: QuartzComponentProps) => {
             Send me an anonymous message
           </a>
         </p>
-
-        <div class="issue-container">{Object.values(cards)}</div>
+        <p>Welcome to a look into my world, an anti-social, social media to say. Stay for as long as you'd like!</p>
+        <div class="issue-container">{Object.values(cards).slice(0,8)}</div>
       </div>
     </div>
   )
