@@ -1,1 +1,2 @@
 - Yk I heard tulips were introduced to the Dutch by the Ottomans. So you're sorta like a tulip, originally Turkish, produced in the Netherlands 🤣
+- https://youtu.be/8LD_bz8vnRw
