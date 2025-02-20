@@ -17,7 +17,7 @@ const config: QuartzConfig = {
     },
     locale: "en-US",
     baseUrl: "quartz.jzhao.xyz",
-    ignorePatterns: ["private", "templates", ".obsidian", "**/*.{mp3,wav,flac,ogg,m4a,mp4,mkv,avi,mov,webm,gif,jpg,jpeg,png,svg,webp}"],
+    ignorePatterns: ["Private", ".obsidian"],
     defaultDateType: "created",
     generateSocialImages: true, // controls whether social media images are automatically generated for the content
     theme: {

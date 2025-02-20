@@ -12,7 +12,6 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
   const CARDS = getCards(false)
 
   const card = fileData.slug ? CARDS[fileData.slug.split('/')[0] as keyof typeof CARDS] : null
-  // console.log(fileData.slug)
 
   return (
       <div class="header-card">{card}</div>

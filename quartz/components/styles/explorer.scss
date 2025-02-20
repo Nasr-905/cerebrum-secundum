@@ -32,6 +32,7 @@
   height: 100%;
   flex-direction: column;
   overflow-y: hidden;
+  height: 40vh;
 
   @media all and ($mobile) {
     order: -1;

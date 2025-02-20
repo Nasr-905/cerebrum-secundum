@@ -1,5 +1,6 @@
-- Quartz v4 as a static site generator
-- split site into different sections with different themes
+# Blogging and Sharing
+- [x] Quartz v4 as a static site generator
+- [x] split site into different sections with different themes
 	- homepage
 		- what I'm currently working on
 		- interactive portfolio
@@ -11,200 +12,86 @@
 	- projects
 	- music
 	- Blog
-	- Archives
-- code highlighting
-- comments
-- multiple language support
-- highlighted blocks of text
-- card files
-- Pictures and videos
-- notes
-- contacts
+- [x] code highlighting
+- [x] music
+- [x] port all text-based drive items to obsidian
+- [ ] comments
+	- Use Remark42
+- [ ] Notes
+	- [ ] MAT389
+	- [ ] ESC180
+	- [ ] ESC190
+	- [ ] ECE358
+	- [ ] ECE355
+	- [ ] ECE286/MIE286
+	- [ ] ECE159
+	- [ ] ESC103
+	- [ ] MAT185
+	- [ ] MSE160
+	- [ ] MAT292
+	- [ ] PHY180
+	- [ ] CIV102
+	- [ ] ESC194
+	- [ ] ESC195
+	- [ ] AER210
+	- [ ] ECE259
+	- [ ] CHE260
+	- [ ] ECE253
+	- [ ] ECE360
+	- [ ] ECE352
+	- [ ] PHY293
+	- [ ] PHY294
+	- [ ] BME205
+	- [ ] ECE349
+- [ ] Projects
+	- [ ] Website
+	- [ ] Soybean Sprouting
+	- [ ] Shape Evolution and 3d Printing
+	- [ ] Quranki
+	- [ ] Rainfall Simulator
+	- [ ] Praxis III
+	- [ ] CIV102 Bridge Code
+	- [ ] Rest API Usage
+	- [ ] Casino Royale
+	- [ ] Music Recommendation
+	- [ ] CSC318
+	- [ ] Polymer Beads
+	- [ ] APS360 Labs
+	- [ ] Prayer Times
+	- [ ] ESC190 Labs
+	- [ ] ESC180 Labs
+	- [ ] Praxis I
+	- [ ] Praxis II
+	- Coming Soon
+		- Dantotsu Fork
+		- Whisper Project
+		- XRP Ledger Project
+		- AI Internship Applier
+- [ ] Welcome message
+- [ ] Why I created the site
+- [ ] What is a Zettelkasten?
+- [ ] link to resume
+- [ ] full graph view at index
+- [ ] gif at tag pages
+- [ ] Blog list should just have blog posts
+- [ ] Contact me/ anonymous message feature
+- [ ] multiple language support
+# Archiving
+- [ ] card files
+	- I forget what this means
+- [ ] Pictures and videos
+- [ ] Port all onedrive files
+- [ ] contacts
 	- extend the contact feature to also show social media handles
 	- when you click on the handle, it takes you to your chat history
 	- tag images with contacts to show who's in the image
-- use ADB over WiFi to sync messages
-- music
-- storage using "cloud object storage"
-	- Google Cloud
-		- Standard: Columbus (`us-east5`)$0.020/GB/month
-		- can't use the others BC they're meant for infrequent access, archive may take hours for access
+- [ ] use ADB over WiFi to sync messages
+- [ ] sync whatsapp and discord
+- [ ] storage using "cloud object storage"
+	- ~~Google Cloud~~
+		- ~~Standard: Columbus (`us-east5`)$0.020/GB/month~~
+		- ~~can't use the others BC they're meant for infrequent access, archive may take hours for access~~
 	- Cloudflare R2
 		- Free 10gb
-		- Then 0.015/GB/mont
+		- Then 0.015/GB/month
 - self-hosted password manager
-- port all text-based drive items to obsidian
-
-# Quartz Themes
-## All themes I Sort of Liked
-- cardstock
-- covert
-- comfort-color-dark
-- comfort-dark
-- comfort-smooth
-- abate
-- absolutegruv
-- al-dente
-- aurora-twilight
-- ayu-light-mirage
-- behave-dark
-- blue-topaz
-- bolt
-- bossidian
-- buena-vista
-- carbon
-- celestial-night
-- charcoal
-- chiaroscuroflow
-- discordian
-- dracula-for-obsidian
-- dune
-- dunite
-- ethereon
-- everforest-enchanted
-- everforest
-- evilred
-- faded
-- firefly
-- flexoki
-- focus
-- fusion
-- garden-gnome-adwaita-gtk
-- gdct-dark
-- golden-topaz
-- heboric
-- ia-writer
-- iceberg
-- its-theme
-- kanagawa
-- kurokula
-- listive
-- lyt-mode
-- material-gruvbox
-- minimal
-- monokai
-- moonlight
-- nebula
-- nier
-- nordic
-- notation
-- notswift
-- novadust
-- obsidian-gruvbox
-- obsidian-nord
-- obsidianotion
-- obuntu
-- ono-sendai
-- pale
-- penumbra
-- phoenix
-- pine-forest-berry
-- pink-topaz
-- pisum
-- pln
-- poimandres
-- protocolblue
-- pure
-- red-graphite
-- reshi
-- reverie
-- rose-red
-- sandover
-- sandstorm
-- sea-glass
-- seamless-view
-- solarized
-- soothe
-- spectrum
-- spring
-- sqdthone
-- strict
-- synthwave-84
-- things
-- tiniri
-- tokyo-night-storm
-- tokyo-night
-- tomorrow
-- trace-labs
-- typewriter
-- typora-vue
-- ukiyo
-- underwater
-- venom
-- virgo
-- w95
-- wasp
-- willemstad
-- wiselight
-- wombat
-- zenburn
-
-## Themes I Really Liked
-- material-gruvbox
-- golden-topaz
-- listive
-- everforest`
-- pine-forest-berry
-
-- kanagawa-dark x reshi-light
-- ukiyo-dark x ono-sendai-light
-- pisum-dark x sandstorm-light
-- charcoal-dark x w95-dark
-- cardstock-dark x underwater-light
-- absolutegruv-dark x sqdthone-light
-
-## My Custom Theme
-```ts
-lightMode: {
-
-light: " #FBF6F2", // page background
-
-lightgray: " #FFE8C6", // borders, inline code highlight, search
-
-gray: " #6B768B", // header line tables, unvisited graph node, graph links on hover
-
-darkgray: " #495867", // body text
-
-dark: " #5A4F79", // header text, icons, inline and block code text, Layout header (explorer, graph view, table of contents) text, note names in explorer text
-
-secondary: " #a35046", // internal/external links, current graph node
-
-tertiary: " #e7ad99", // internal/external links hover, visited graph node
-
-highlight: " #FFE8DC", // internal link background, footnote number link highlight
-
-textHighlight: " #f4b5a5", // markdown highlighted text
-
-},
-```
-I ended up going with the pre-made themes tho
-
-```scss
---bg_blue_light: #e9f0e9;
-
---bg_yellow_light: #faedcd;
-
---fg-light: #654735;
-
---light-red: #C24C4C;
-
---light-orange: #C45E09;
-
---light-yellow: #6C782E;
-
---light-green: #899c40;
-
---light-aqua: #569d79;
-
---light-blue: #5a93a2;
-
---light-purple: #b87b9d;
-
---light-dim-red: #f1706f;
-
---light-dim-orange: #f39459;
-
---light-dim-yellow: #e4b649;
-
---light-dim-green: #a4bb4a;
-```

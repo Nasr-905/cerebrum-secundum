@@ -106,7 +106,7 @@ const LandingComponent = (props: QuartzComponentProps) => {
             Send me an anonymous message
           </a>
         </p>
-        <p>Welcome to a look into my world, an anti-social, social media to say. Stay for as long as you'd like!</p>
+        <p>Welcome to a look into a piece of my mind, <a href="/Blog/On-Zettelkastens,-Digital-Gardens-and-Second-Brains">or rather my <em>second mind</em></a>. I'm a 3rd year Engineering Science student at the University of Toronto majouring in <a href="/tags/ECE">Electrical & Computer Engineering</a> and minoring in <a href="/tags/robo">Robotics</a> and <a href="/tags/ML">Artificial Intelligence</a>. I believe we're best described by our projects and passions that degree title, so please check out my <a href="/Projects">projects</a>! I also <a href="/Blog">blog</a> (in french!).</p>
         <div class="issue-container">{Object.values(cards).slice(0,8)}</div>
       </div>
     </div>
