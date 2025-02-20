@@ -1,1 +1,0 @@
-As narrated by his student, Ibn Sakhbarah, he was short, black with two braids

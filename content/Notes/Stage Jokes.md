@@ -1,6 +1,0 @@
-1. I'm not sure what it means, i was just told to end with a poem.
-2. Unfinished - don't Google it
-3. I no longer have fear of ice cold beer
-4. I'm the head secretary chief vice president of habitat for humanity, make sure you got all that because it means more to me than my ib point total
-5. Did you know what people have been saying about abortions? They say it promotes planned Parenthood. Planned Parenthood? You know where I'm from the planning happens before. Just in general.
-- I know a lot of misogynists actually, hey but I know a lot of racists too, unlike you all, I don't discriminate. They might, but I don't. You might ask, what makes him (of course it's a him) misogynist? Well... He doesn't think women should vote 😬... yeah... But! Hey in his defense, I don't think anyone should vote. Here's my problem with democracy, you put your tiny slips into boxes and pray to make 'change'. Like that will do anything against lobbiests. Me personally... When I want something... I just take it, yeah it's really effective. Paper slips *chuckle*, the only thing slipping is my trigger finger. 

@@ -1,6 +1,0 @@
-Some people had a book that served as a curse in some way. Those who had a book were given the opportunity to rid themselves of the curse by performing an awakening.
-
-Awakenings begin on a chair in which there is a hand on the wall. When it begins and the individual is worthy the hand will glow and raise one finger, if not the person will drop dead. When one finger is held the person must raise the same finger on their right hand while holding their book on their left. The right hand should also move in a vertical circle. Once this is complete, something intangible is taken from the person (memories, faith, sanity, etc.). After, the hand raises another finger and the person hasn't lost themselves, they will preform it again with two fingers and something else is taken from them. With every finger comes a ring of low bell (once for one finger, twice for the second, etc.). This continues until the person either no longer recognizes themselves or lose sanity. If the person Manages to get past five fingers, everyone present begins to chant 'What else is there to lose?' and eventually appears a blue haired girl who silence them and finally reappeats the same question.
-
-My brother and I are somewhat of an anomaly in which shared between the two of us is one of these books. So during an awakening, we would split what gets taken from us.
-
