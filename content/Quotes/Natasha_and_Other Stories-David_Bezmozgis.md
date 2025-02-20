@@ -1,0 +1,1 @@
+>"There is reality and then there is truth. The reality is that Tapka will live. But let’s be honest, the truth is you killed Tapka. Look at Rita; look at Misha. You see, who are you kidding? You killed Tapka and you will never be forgiven." - 32/262

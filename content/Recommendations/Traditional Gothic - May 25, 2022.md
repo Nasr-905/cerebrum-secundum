@@ -1,0 +1,16 @@
+- Mary Shelley's Frankenstein
+- Bram Stoker's Dracula
+- Robert Louis Stevenson's The Strange Case of Dr. Jekyll and Mr. Hyde
+- The Cask of Amontillado by Edgar Allan Poe
+- The Yellow Wallpaper by Charlotte Perkins Gilman
+- The Monkey's Paw by W.W. Jacobs
+- Hell Screen by Ryunosuke Akutagawa
+- A Rose for Emily by William Faulkner
+- The Laughing Man by J.D. Salinger
+- Good Country People by Flannery O'Connor
+- The Bloody Chamber by Angela Carter
+- The October Game by Ray Bradbury
+- Fall on Your Knees by Anne-Marie Macdonald
+- Dormitory by Yoko Ogawa
+- 
+- 
