@@ -1,8 +1,13 @@
 @use "./base.scss";
 @use "./variables.scss" as *;
-@use "quartz-themes";
-@use "quartz-themes/__CONVERTER/__OUTPUT/material-gruvbox/_index.scss";
+@use "material-gruvbox/_index.scss";
 
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
+@use "sass:list";
+
+@use "./layouts/minimal";
 
 // put your custom CSS here!
 @media all and ($mobile) {

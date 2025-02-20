@@ -1,0 +1,123 @@
+// https://minimal.guide/home
+
+// Shared
+:root[saved-theme="light"] {
+  body {
+    .page {
+      #quartz-body {
+        background: var(--bg-light);
+        .sidebar.left,
+        #explorer-content,
+        .explorer {
+          background-color: var(--bg1-light);
+        }
+      }
+    }
+  }
+}
+
+:root {
+  body {
+    .page {
+      #quartz-body {
+        background: var(--bg-dark);
+        padding: 0;
+        .sidebar.left,
+        #explorer-content,
+        .explorer {
+          background-color: var(--bg1-dark);
+        }
+      }
+    }
+  }
+}
+
+.center {
+  h1,
+  h2 {
+    padding-bottom: 1rem;
+  }
+  .page-header > div,
+  article,
+  div.page-listing {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+footer > p,
+footer > ul {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+div.sidebar.left {
+  border-right: 1px solid var(--color-base-35);
+}
+
+// Tablet
+body {
+    background: linear-gradient(
+      90deg,
+      var(--bg1-dark) 0%,
+      var(--bg1-dark) 80%,
+      var(--bg-dark) 80%,
+      var(--bg-dark) 100%
+    );
+    .sidebar.left {
+      background-color: var(--bg1-dark);
+    }
+    .sidebar.right {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+
+}
+
+
+:root[saved-theme="light"] {
+  body {
+      background: linear-gradient(
+        90deg,
+        var(--bg1-light) 0%,
+        var(--bg1-light) 80%,
+        var(--bg-light) 80%,
+        var(--bg-light) 100%
+      );
+      .sidebar.left {
+        background-color: var(--bg1-light);
+      }
+  }
+}
+
+
+
+// Mobile
+@media all and (max-width: 800px) {
+  body {
+    .page {
+      #quartz-body {
+        h1.article-title {
+          margin-top: 1rem;
+        }
+        padding: 0;
+        .sidebar.left {
+          display: flex;
+          padding: 0.5rem 1rem 0.25rem;
+          position: sticky;
+        }
+        .sidebar.right,
+        .center,
+        footer {
+          margin-left: 1rem;
+          margin-right: 1rem;
+          max-width: calc(100% - 2rem);
+          min-width: calc(100% - 2rem);
+        }
+        .sidebar.right {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
