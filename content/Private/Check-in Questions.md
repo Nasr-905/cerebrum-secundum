@@ -1,5 +1,0 @@
-- Bear?
-- What age should kids transition?
-- Russia Ukraine?
-- What is a woman?
-- What's your least favourite country?

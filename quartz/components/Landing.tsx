@@ -78,6 +78,14 @@ export const getCards = (isIndex?: boolean) => ({
           </div>
         </a>
       ),
+      Home: (
+        <a href="/" target="_blank">
+          <div class="card card-10">
+            <p class="card-title highlight"></p>
+            <p class="card-subhead highlight"></p>
+          </div>
+        </a>
+      ),
   })
 
 const LandingComponent = (props: QuartzComponentProps) => {
@@ -94,19 +102,27 @@ const LandingComponent = (props: QuartzComponentProps) => {
             GitHub
           </a>{" "}
           •{" "}
+          <a href="/resume.pdf" target="_blank">
+            Resume
+          </a>{" "}
+          •{" "}
           <a href="mailto:oladimeji@nasrudeen.com" target="_blank">
-            Email Me
+            Email
           </a>{" "}
           •{" "}
           <a href="tel:+1-647-615-7797" target="_blank">
-            Call Me
+            Call
           </a>{" "}
           •{" "}
           <a href="" target="_self">
-            Send me an anonymous message
+            Send Me an Anonymous Message
+          </a>{" "}
+          •{" "}
+          <a href="https://app.reclaim.ai/m/nasrudeen-oladimeji/flexible-quick-meeting" target="_blank">
+            Book a Meeting with Me
           </a>
         </p>
-        <p>Welcome to a look into a piece of my mind, <a href="/Blog/On-Zettelkastens,-Digital-Gardens-and-Second-Brains">or rather my <em>second mind</em></a>. I'm a 3rd year Engineering Science student at the University of Toronto majouring in <a href="/tags/ECE">Electrical & Computer Engineering</a> and minoring in <a href="/tags/robo">Robotics</a> and <a href="/tags/ML">Artificial Intelligence</a>. I believe we're best described by our projects and passions that degree title, so please check out my <a href="/Projects">projects</a>! I also <a href="/Blog">blog</a> (in french!).</p>
+        <p>Welcome to a look into a piece of my mind, <a href="/Blog/On-Zettelkastens,-Digital-Gardens-and-Second-Brains">or rather my <em>second mind</em></a>. I'm a 3rd year Engineering Science student at the University of Toronto majoring in <a href="/tags/ECE">Electrical & Computer Engineering</a> and minoring in <a href="/tags/robo">Robotics</a> and <a href="/tags/ML">Artificial Intelligence</a>. I believe we're best described by our projects and passions rather than degree titles, so please check out my <a href="/Projects">projects</a>! I also <a href="/Blog">blog</a> (in French!).</p>
         <div class="issue-container">{Object.values(cards).slice(0,8)}</div>
       </div>
     </div>

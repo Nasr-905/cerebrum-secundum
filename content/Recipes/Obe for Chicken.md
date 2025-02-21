@@ -1,8 +1,0 @@
-- blend pepper, onions tomato
-- oil on the stove , very hot
-- diced onions to the pot
-- minced garlic
-- after a while add ata
-- add salt, not too much
-- add Maggi
-- add chicken

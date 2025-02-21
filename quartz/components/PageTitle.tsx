@@ -11,7 +11,8 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
   const baseDir = pathToRoot(fileData.slug!)
   const CARDS = getCards(false)
 
-  const card = fileData.slug ? CARDS[fileData.slug.split('/')[0] as keyof typeof CARDS] : null
+  const slugKey = fileData.slug ? fileData.slug.split('/')[0] : "Home";
+  const card = slugKey in CARDS ? CARDS[slugKey as keyof typeof CARDS] : CARDS["Home"];
 
   return (
       <div class="header-card">{card}</div>

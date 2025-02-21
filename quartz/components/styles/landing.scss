@@ -22,7 +22,7 @@
     font-size: 14px;
     margin-bottom: 48px;
     font-family: var(--codeFont);
-    text-transform: uppercase;
+    // text-transform: uppercase;
   }
   
   /* ISSUE CARDS */
@@ -93,7 +93,7 @@
   }
 
   /* General Card Styling */
-  @for $i from 1 through 9 {
+  @for $i from 1 through 10 {
     .card-#{$i} {
         background-size: cover;
         overflow: visible;

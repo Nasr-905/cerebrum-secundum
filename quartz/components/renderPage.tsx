@@ -242,12 +242,19 @@ export function renderPage(
 
   const LandingComponent = Landing()
 
+  const filterByDirectory = (directory: string) => (f: QuartzPluginData) => {
+    if (typeof f.relativePath === "string") {
+      return f.relativePath.startsWith(directory + "/");
+    }
+    return false;
+  };  
+
   const RecentNotes = Recent({
     title: "Recent Blog Posts",
     limit: 5,
     linkToMore: "/Blog" as SimpleSlug,
     showTags: true,
-    filter: () => true, // Adjust this as needed
+    filter: filterByDirectory("Blog")
   })
 
   const lang = componentData.fileData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en"
