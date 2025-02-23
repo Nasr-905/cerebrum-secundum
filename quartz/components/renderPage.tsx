@@ -15,6 +15,12 @@ import { QuartzPluginData } from "../plugins/vfile"
 
 import Landing from "./Landing"
 
+import { getCards } from "./Landing"
+
+const CARDS = getCards(false)
+
+import Welcome from "./HeaderContainer"
+
 import Recent from "./RecentNotes"
 
 interface RenderComponents {
@@ -254,10 +260,27 @@ export function renderPage(
     limit: 5,
     linkToMore: "/Blog" as SimpleSlug,
     showTags: true,
-    filter: filterByDirectory("Blog")
+    filter: filterByDirectory("Blog"),
+    sort: (f1: QuartzPluginData, f2: QuartzPluginData) => {
+      // Get both created and modified dates
+      const date1Created = f1.dates?.created ? new Date(f1.dates.created).getTime() : 0
+      const date1Modified = f1.dates?.modified ? new Date(f1.dates.modified).getTime() : 0
+      const date2Created = f2.dates?.created ? new Date(f2.dates.created).getTime() : 0
+      const date2Modified = f2.dates?.modified ? new Date(f2.dates.modified).getTime() : 0
+      
+      // Use the most recent date (either created or modified)
+      const date1 = Math.max(date1Created, date1Modified)
+      const date2 = Math.max(date2Created, date2Modified)
+      
+      return date2 - date1
+    }
   })
 
   const lang = componentData.fileData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en"
+
+  const slugKey = slug.split('/');
+  const shouldHideFooter = slugKey.slice(-1)[0] in CARDS || slugKey[0] === "tags";
+
   const doc = (
     <html lang={lang}>
       <Head {...componentData} />
@@ -274,29 +297,32 @@ export function renderPage(
             {LeftComponent}
             <div class="center">
               <div class="page-header">
+                {slug === "index" && <Welcome {...componentData} />}
+                {slug !== "index" && ( <>
+                  <Header {...componentData}>
+                    {header.map((HeaderComponent) => (
+                      <HeaderComponent {...componentData} />
+                    ))}
+                  </Header>
+                  <div class="popover-hint">
+                    {beforeBody.map((BodyComponent) => (
+                      <BodyComponent {...componentData} />
+                    ))}
+                  </div>
+                  </>
+                  )}
+              </div>
+              <Content {...componentData} />
               {slug === "index" && <LandingComponent {...componentData} />}
               {slug === "index" && <RecentNotes {...componentData} />}
-              {slug !== "index" && ( <>
-                <Header {...componentData}>
-                  {header.map((HeaderComponent) => (
-                    <HeaderComponent {...componentData} />
-                  ))}
-                </Header>
-                <div class="popover-hint">
-                  {beforeBody.map((BodyComponent) => (
+              <hr />
+              {!shouldHideFooter && (
+                <div class="page-footer">
+                  {afterBody.map((BodyComponent) => (
                     <BodyComponent {...componentData} />
                   ))}
                 </div>
-                </>
-                )}
-              </div>
-              <Content {...componentData} />
-              <hr />
-              <div class="page-footer">
-                {afterBody.map((BodyComponent) => (
-                  <BodyComponent {...componentData} />
-                ))}
-              </div>
+              )}
             </div>
             {RightComponent}
             {/* the if statements like being in divs ig */}

@@ -1,4 +1,4 @@
-import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import { QuartzComponentConstructor, QuartzComponentProps, QuartzComponent } from "./types"
 import landingStyle from "./styles/landing.scss"
 import Recents from "./RecentNotes"
 
@@ -57,7 +57,7 @@ export const getCards = (isIndex?: boolean) => ({
       Workout: (
         <a href="https://hevy.com/user/n_a_s" target="_blank">
           <div class="card card-7">
-            <p class="card-title highlight">Workout</p>
+            <p class="card-title highlight">Workouts</p>
             <p class="card-subhead highlight">Every once in a while</p>
           </div>
         </a>
@@ -88,43 +88,15 @@ export const getCards = (isIndex?: boolean) => ({
       ),
   })
 
-const LandingComponent = (props: QuartzComponentProps) => {
-  const slug = props?.fileData?.slug // Extract slug dynamically from QuartzPluginData
+  const LandingComponent = (props: QuartzComponentProps) => {
+    const slug = props?.fileData?.slug // Extract slug dynamically from QuartzPluginData
   const isIndex = slug === "index"
   const cards = getCards(isIndex)
 
+
   return (
-    <div>
-      <div class="content-container">
-        <p class="landing-header">Welcome, My Name is Nas :)</p>
-        <p class="page-subhead">
-          <a href="https://github.com/Nasr-905/" target="_blank">
-            GitHub
-          </a>{" "}
-          •{" "}
-          <a href="/resume.pdf" target="_blank">
-            Resume
-          </a>{" "}
-          •{" "}
-          <a href="mailto:oladimeji@nasrudeen.com" target="_blank">
-            Email
-          </a>{" "}
-          •{" "}
-          <a href="tel:+1-647-615-7797" target="_blank">
-            Call
-          </a>{" "}
-          •{" "}
-          <a href="" target="_self">
-            Send Me an Anonymous Message
-          </a>{" "}
-          •{" "}
-          <a href="https://app.reclaim.ai/m/nasrudeen-oladimeji/flexible-quick-meeting" target="_blank">
-            Book a Meeting with Me
-          </a>
-        </p>
-        <p>Welcome to a look into a piece of my mind, <a href="/Blog/On-Zettelkastens,-Digital-Gardens-and-Second-Brains">or rather my <em>second mind</em></a>. I'm a 3rd year Engineering Science student at the University of Toronto majoring in <a href="/tags/ECE">Electrical & Computer Engineering</a> and minoring in <a href="/tags/robo">Robotics</a> and <a href="/tags/ML">Artificial Intelligence</a>. I believe we're best described by our projects and passions rather than degree titles, so please check out my <a href="/Projects">projects</a>! I also <a href="/Blog">blog</a> (in French!).</p>
-        <div class="issue-container">{Object.values(cards).slice(0,8)}</div>
-      </div>
+    <div class="issue-container">
+      {Object.values(cards).slice(0, 8)}
     </div>
   )
 }

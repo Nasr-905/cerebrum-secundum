@@ -10,6 +10,11 @@
 @use "./layouts/minimal";
 
 // put your custom CSS here!
+
+:root {
+  --gold: rgba(234, 157, 52, 1);
+}
+
 @media all and ($mobile) {
   .page > #quartz-body {
     .sidebar.left {

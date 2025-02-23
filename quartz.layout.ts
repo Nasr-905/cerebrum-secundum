@@ -5,12 +5,57 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
-  footer: Component.Footer({
+  afterBody: [
+    Component.Comments({
+      provider: "giscus",
+      options: {
+        // from data-repo
+        repo: 'Nasr-905/cerebrum-secundum',
+        // from data-repo-id
+        repoId: 'R_kgDON9eRwg',
+        // from data-category
+        category: 'Announcements',
+        // from data-category-id
+        categoryId: 'DIC_kwDON9eRws4CnMrh',
+     
+        // Url to folder with custom themes
+        // defaults to 'https://${cfg.baseUrl}/static/giscus'
+        themeUrl: "/themes",
+     
+        // filename for light theme .css file
+        // defaults to 'light'
+        lightTheme: "gruvbox_light",
+     
+        // filename for dark theme .css file
+        // defaults to 'dark'
+        darkTheme: "gruvbox_dark",
+     
+        // how to map pages -> discussions
+        // defaults to 'url'
+        // mapping?: "url" | "title" | "og:title" | "specific" | "number" | "pathname"
+     
+        // use strict title matching
+        // defaults to true
+        // strict?: boolean
+     
+        // whether to enable reactions for the main post
+        // defaults to true
+        // reactionsEnabled?: boolean
+     
+        // where to put the comment input box relative to the comments
+        // defaults to 'bottom'
+        inputPosition: "top",
+      }
+    }),
+  ],
+    footer: Component.Footer({
     links: {
       GitHub: "https://github.com/Nasr-905/",
-      "Email Me": "mailto:oladimeji@nasrudeen.com",
-      "Call Me": "tel:+1-647-615-7797",
+      Resume: "/resume",
+      "Email": "mailto:oladimeji@nasrudeen.com",
+      "Call": "tel:+1-647-615-7797",
+      "Send Me an Anonymous Message": "/contact",
+      "Book a Meeting with Me": "https://app.reclaim.ai/m/nasrudeen-oladimeji/flexible-quick-meeting",
     },
   }),
 }
@@ -29,6 +74,9 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.Explorer(),
+    Component.FloatingButtons({
+      position: 'right',
+    }),
   ],
   right: [
     Component.Graph({
@@ -75,6 +123,9 @@ export const defaultListPageLayout: PageLayout = {
     Component.Search(),
     Component.Darkmode(),
     Component.Explorer(),
+    Component.FloatingButtons({
+      position: 'right',
+    }),
   ],
   right: [
     Component.Graph({

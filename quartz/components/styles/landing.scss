@@ -9,19 +9,20 @@
 .landing-header {
     font-size: 48px;
     margin: 64px 0 8px 0;
-    font-family: "Tiempos", sans-serif;
+    font-family: var(--headerFont);
     font-weight: 700;
     line-height: normal;
   }
   
   .highlight {
     background-color: color-mix(in srgb, var(--link-color), #0000 calc(100% - 30%));
+    border-radius: 4px;
   }
 
   .page-subhead {
-    font-size: 14px;
+    font-size: 18px;
     margin-bottom: 48px;
-    font-family: var(--codeFont);
+    font-family: var(--headerFont);
     // text-transform: uppercase;
   }
   
@@ -70,16 +71,18 @@
   }
   
   .card-title {
-    font-family: "Tiempos", sans-serif;
-    font-size: clamp(16px, 2.5vw, 35px); 
+    text-align: center;
+    font-family: var(--headerFont);
+    font-size: clamp(16px, 2vw, 30px); 
     margin: 0 0 8px 0;
     line-height: normal;
     color: var(--text-normal);
   }
   
   .card-subhead {
+    display: none;
     font-size: 12px;
-    font-family: monospace;
+    font-family: var(--bodyFont);
     margin-top: 0;
     color: var(--text-normal);
     @media screen and (max-width: 800px) {

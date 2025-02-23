@@ -16,7 +16,7 @@ const config: QuartzConfig = {
       provider: "plausible",
     },
     locale: "en-US",
-    baseUrl: "quartz.jzhao.xyz",
+    baseUrl: "nasrudeen.com",
     ignorePatterns: ["Private", ".obsidian"],
     defaultDateType: "created",
     generateSocialImages: true, // controls whether social media images are automatically generated for the content
@@ -24,8 +24,8 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "Source Sans Pro",
+        header: "Chakra Petch",
+        body: "Atkinson Hyperlegible",
         code: "IBM Plex Mono",
       },
       // All the colors get overriden by the theme
@@ -61,6 +61,7 @@ const config: QuartzConfig = {
       Plugin.CreatedModifiedDate({
         priority: ["frontmatter", "filesystem"],
       }),
+      Plugin.TelescopicText(),
       Plugin.SyntaxHighlighting({
         theme: {
           light: "github-light",
