@@ -21,8 +21,8 @@ const HeaderContainer = (props: QuartzComponentProps) => {
           Call
         </a>{" "}
         •{" "}
-        <a href="" target="_self">
-          Send Me an Anonymous Message
+        <a href="/contact" target="_self">
+          Contact Me (Anon Option)
         </a>{" "}
         •{" "}
         <a href="https://app.reclaim.ai/m/nasrudeen-oladimeji/flexible-quick-meeting" target="_blank">

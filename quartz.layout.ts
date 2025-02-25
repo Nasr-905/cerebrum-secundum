@@ -62,7 +62,7 @@ export const sharedPageComponents: SharedLayout = {
       Resume: "/resume",
       "Email": "mailto:oladimeji@nasrudeen.com",
       "Call": "tel:+1-647-615-7797",
-      "Send Me an Anonymous Message": "/contact",
+      "Contact Me (Anon Option)": "/contact",
       "Book a Meeting with Me": "https://app.reclaim.ai/m/nasrudeen-oladimeji/flexible-quick-meeting",
     },
   }),
