@@ -1,0 +1,66 @@
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--lightgray);
+  border-radius: 5px;
+  background-color: var(--background-primary-alt);
+  color: var(--text-normal);
+
+  label {
+    font-weight: var(--font-medium);
+    color: var(--text-muted);
+    width: 95%;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--lightgray);
+    border-radius: 5px;
+    background-color: var(--background-primary);
+    color: var(--text-normal);
+    font-family: var(--font-text);
+    font-size: var(--font-text-size);
+
+    &:focus {
+      border-color: var(--interactive-accent);
+      outline: none;
+      box-shadow: 0 0 0 2px var(--interactive-accent-hover);
+    }
+  }
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+
+  button[type="submit"] {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--interactive-accent);
+    color: var(--text-on-accent);
+    font-family: var(--font-text);
+    font-size: var(--font-text-size);
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: var(--interactive-accent-hover);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px var(--interactive-accent-hover);
+    }
+  }
+
+  .error-message {
+    color: var(--color-red);
+    font-weight: var(--font-medium);
+  }
+}

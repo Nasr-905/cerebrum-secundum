@@ -88,8 +88,8 @@ export const getCards = (isIndex?: boolean) => ({
       ),
   })
 
-  const LandingComponent = (props: QuartzComponentProps) => {
-    const slug = props?.fileData?.slug // Extract slug dynamically from QuartzPluginData
+const LandingComponent = (props: QuartzComponentProps) => {
+  const slug = props?.fileData?.slug // Extract slug dynamically from QuartzPluginData
   const isIndex = slug === "index"
   const cards = getCards(isIndex)
 

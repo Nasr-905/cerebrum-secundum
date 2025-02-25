@@ -14,14 +14,11 @@ import mermaidStyle from "./styles/mermaid.inline.scss"
 import { QuartzPluginData } from "../plugins/vfile"
 
 import Landing from "./Landing"
-
 import { getCards } from "./Landing"
+import Welcome from "./HeaderContainer"
+import Recent from "./RecentNotes"
 
 const CARDS = getCards(false)
-
-import Welcome from "./HeaderContainer"
-
-import Recent from "./RecentNotes"
 
 interface RenderComponents {
   head: QuartzComponent
@@ -246,7 +243,6 @@ export function renderPage(
     </div>
   )
 
-  const LandingComponent = Landing()
 
   const filterByDirectory = (directory: string) => (f: QuartzPluginData) => {
     if (typeof f.relativePath === "string") {
@@ -276,10 +272,8 @@ export function renderPage(
     }
   })
 
+  const LandingComponent = Landing()
   const lang = componentData.fileData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en"
-
-  const slugKey = slug.split('/');
-  const shouldHideFooter = slugKey.slice(-1)[0] in CARDS || slugKey[0] === "tags";
 
   const doc = (
     <html lang={lang}>
@@ -297,7 +291,10 @@ export function renderPage(
             {LeftComponent}
             <div class="center">
               <div class="page-header">
-                {slug === "index" && <Welcome {...componentData} />}
+                {slug === "index" && ( <>
+                <Welcome {...componentData} />
+                </>
+                )}
                 {slug !== "index" && ( <>
                   <Header {...componentData}>
                     {header.map((HeaderComponent) => (
@@ -313,16 +310,17 @@ export function renderPage(
                   )}
               </div>
               <Content {...componentData} />
-              {slug === "index" && <LandingComponent {...componentData} />}
+              {slug === "index" && ( <>
+              <LandingComponent {...componentData} />
+              </>
+            )}
               {slug === "index" && <RecentNotes {...componentData} />}
               <hr />
-              {!shouldHideFooter && (
                 <div class="page-footer">
                   {afterBody.map((BodyComponent) => (
                     <BodyComponent {...componentData} />
                   ))}
                 </div>
-              )}
             </div>
             {RightComponent}
             {/* the if statements like being in divs ig */}

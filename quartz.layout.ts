@@ -1,12 +1,19 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
+import { FileNode } from "./quartz/components/ExplorerNode"
+
+const explorerFilterFn = (node: FileNode) => {
+  return !["tags", "contact"].includes(node.name)
+}
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
   afterBody: [
-    Component.Comments({
+    Component.OnlyFor({ titles: ["contact"]}, Component.Contact({ workerUrl: "https://contact-form.nasrudeenoladimeji.workers.dev/" })
+    ),
+    Component.NotFor({ titles: ["contact", "index"]}, Component.Comments({
       provider: "giscus",
       options: {
         // from data-repo
@@ -46,7 +53,8 @@ export const sharedPageComponents: SharedLayout = {
         // defaults to 'bottom'
         inputPosition: "top",
       }
-    }),
+    })
+  ),
   ],
     footer: Component.Footer({
     links: {
@@ -73,7 +81,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.Explorer(),
+    Component.Explorer({ filterFn: explorerFilterFn }),
     Component.FloatingButtons({
       position: 'right',
     }),
@@ -114,6 +122,7 @@ export const defaultContentPageLayout: PageLayout = {
   ],
 }
 
+
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
@@ -122,7 +131,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.Explorer(),
+    Component.Explorer({ filterFn: explorerFilterFn }),
     Component.FloatingButtons({
       position: 'right',
     }),

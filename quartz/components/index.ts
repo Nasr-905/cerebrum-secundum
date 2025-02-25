@@ -22,6 +22,9 @@ import Breadcrumbs from "./Breadcrumbs"
 import Comments from "./Comments"
 import Landing from "./Landing"
 import FloatingButtons from "./FloatingButtons"
+import Contact from "./Contact"
+import OnlyFor from "./OnlyFor"
+import NotFor from "./NotFor"
 
 export {
   ArticleTitle,
@@ -48,4 +51,7 @@ export {
   Comments,
   Landing,
   FloatingButtons,
+  Contact,
+  OnlyFor,
+  NotFor,
 }
