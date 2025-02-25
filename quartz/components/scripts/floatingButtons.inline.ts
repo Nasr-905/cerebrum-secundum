@@ -43,25 +43,19 @@ function setupFloatingButtons() {
     content.className = 'shortcut-sheet-content'
     
     content.innerHTML = `
-      <h3>键盘快捷键</h3>
+      <h3>Shortcuts</h3>
       <div class="shortcut-list">
         <div class="shortcut-item" data-shortcut="search">
           <span class="shortcut-keys">
             <kbd class="retro-key">⌘</kbd> / <kbd class="retro-key">Ctrl</kbd> + <kbd class="retro-key">K</kbd>
           </span>
-          <span class="shortcut-desc">搜索</span>
+          <span class="shortcut-desc">Search</span>
         </div>
         <div class="shortcut-item" data-shortcut="graph">
           <span class="shortcut-keys">
             <kbd class="retro-key">⌘</kbd> / <kbd class="retro-key">Ctrl</kbd> + <kbd class="retro-key">G</kbd>
           </span>
-          <span class="shortcut-desc">全局图谱</span>
-        </div>
-        <div class="shortcut-item" data-shortcut="reader">
-          <span class="shortcut-keys">
-            <kbd class="retro-key">⌘</kbd> / <kbd class="retro-key">Ctrl</kbd> + <kbd class="retro-key">E</kbd>
-          </span>
-          <span class="shortcut-desc">阅读模式</span>
+          <span class="shortcut-desc">Global Graph</span>
         </div>
       </div>
     `

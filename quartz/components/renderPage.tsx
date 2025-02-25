@@ -326,9 +326,7 @@ export function renderPage(
             </div>
             {RightComponent}
             {/* the if statements like being in divs ig */}
-            <div>
-            {slug !== "index" && <Footer {...componentData} />}
-            </div>
+            <Footer {...componentData} />
             
           </Body>
         </div>
