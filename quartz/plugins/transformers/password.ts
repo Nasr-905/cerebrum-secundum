@@ -33,7 +33,7 @@ export async function encryptPages() {
       customTemplatePath,
       "--remember", "false",
       "--config", "false",
-      "--template-color-secondary", "#dde2d5",
+      "--template-color-secondary", "#FDF5E3",
       "--template-instructions", "First refresh, and then enter password to show the content of this page.<br/><br/><a href='https://quartz.eilleeenz.com/' style='text-decoration:underline wavy;color:inherit'>🏡 Return</a>" ,
       "--template-error", "That password was incorrect.",
       "--template-button", "Unlock 🔓",
