@@ -30,7 +30,7 @@ export async function encryptPages() {
       "--remember", "false",
       "--config", "false",
       "--template-color-secondary", "#000000",
-      "--template-instructions", "Enter password to show the content of this page. Refresh the page if it doesn't work.<br/><br/><a href='https://your-homepage.com/' style='text-decoration:underline wavy;color:inherit'>🏡 Return</a>" ,
+      "--template-instructions", "Enter password to show the content of this page. Refresh the page if it doesn't work.<br/><br/><a href='/' style='text-decoration:underline wavy;color:inherit'>🏡 Return</a>" ,
       "--template-error", "That password was incorrect.",
       "--template-button", "Unlock 🔓"
 
