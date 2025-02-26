@@ -1,3 +1,5 @@
+// Credits https://gist.github.com/OrigamingWasTaken/d70f62c782bc99283eb7df1caa333c26
+
 import spawn from "@expo/spawn-async"
 import fs from "fs"
 import path from "path"
@@ -5,7 +7,7 @@ import { toHtml } from "hast-util-to-html"
 
 import { BuildCtx } from "../../util/ctx"
 import { Root as HTMLRoot } from "hast"
-import { QuartzTransformerPlugin } from "../../plugins/types"
+import { QuartzTransformerPlugin } from "../types"
 import { VFile } from "vfile"
 
 const quartzCache = path.resolve("./quartz/.quartz-cache/password/")
@@ -17,6 +19,8 @@ export async function encryptPages() {
     ? JSON.parse(fs.readFileSync(ppath, "utf-8"))
     : []
   for (const file of passwordCache) {
+    // https://github.com/robinmoisson/staticrypt/blob/27a564ac611e01f0b3589e56eb36df1f8b54381d/cli/helpers.js
+    // see above about the various options you can pass in to the below
     await spawn("npx", [
       "staticrypt",
       file.savePath,
@@ -29,14 +33,14 @@ export async function encryptPages() {
       customTemplatePath,
       "--remember", "false",
       "--config", "false",
-      "--template-color-secondary", "#000000",
-      "--template-instructions", "Enter password to show the content of this page. Refresh the page if it doesn't work.<br/><br/><a href='/' style='text-decoration:underline wavy;color:inherit'>🏡 Return</a>" ,
+      "--template-color-secondary", "#dde2d5",
+      "--template-instructions", "First refresh, and then enter password to show the content of this page.<br/><br/><a href='https://quartz.eilleeenz.com/' style='text-decoration:underline wavy;color:inherit'>🏡 Return</a>" ,
       "--template-error", "That password was incorrect.",
-      "--template-button", "Unlock 🔓"
-
+      "--template-button", "Unlock 🔓",
+      "--salt", "37fc04161cf85ad50c931b3214c6ad34"
     ])
   }
-  // Little cute delay :3
+
   await setTimeout(() => {}, 100)
 }
 
