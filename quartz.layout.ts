@@ -13,7 +13,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Component.OnlyFor({ titles: ["contact"]}, Component.Contact({ workerUrl: "https://contact-form.nasrudeenoladimeji.workers.dev/" })
     ),
-    Component.NotFor({ titles: ["contact", "index"]}, Component.Comments({
+    Component.NotFor({ titles: ["contact"]}, Component.Comments({
       provider: "giscus",
       options: {
         // from data-repo

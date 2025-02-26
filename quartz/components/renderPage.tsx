@@ -257,19 +257,19 @@ export function renderPage(
     linkToMore: "/Blog" as SimpleSlug,
     showTags: true,
     filter: filterByDirectory("Blog"),
-    sort: (f1: QuartzPluginData, f2: QuartzPluginData) => {
-      // Get both created and modified dates
-      const date1Created = f1.dates?.created ? new Date(f1.dates.created).getTime() : 0
-      const date1Modified = f1.dates?.modified ? new Date(f1.dates.modified).getTime() : 0
-      const date2Created = f2.dates?.created ? new Date(f2.dates.created).getTime() : 0
-      const date2Modified = f2.dates?.modified ? new Date(f2.dates.modified).getTime() : 0
+    // sort: (f1: QuartzPluginData, f2: QuartzPluginData) => {
+    //   // Get both created and modified dates
+    //   const date1Created = f1.dates?.created ? new Date(f1.dates.created).getTime() : 0
+    //   const date1Modified = f1.dates?.modified ? new Date(f1.dates.modified).getTime() : 0
+    //   const date2Created = f2.dates?.created ? new Date(f2.dates.created).getTime() : 0
+    //   const date2Modified = f2.dates?.modified ? new Date(f2.dates.modified).getTime() : 0
       
-      // Use the most recent date (either created or modified)
-      const date1 = Math.max(date1Created, date1Modified)
-      const date2 = Math.max(date2Created, date2Modified)
+    //   // Use the most recent date (either created or modified)
+    //   const date1 = Math.max(date1Created, date1Modified)
+    //   const date2 = Math.max(date2Created, date2Modified)
       
-      return date2 - date1
-    }
+    //   return date2 - date1
+    // }
   })
 
   const LandingComponent = Landing()
