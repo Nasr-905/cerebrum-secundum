@@ -3,7 +3,7 @@ import { QuartzComponentProps } from "./types"
 const HeaderContainer = (props: QuartzComponentProps) => {
   return (
     <div>
-      <p class="landing-header">Welcome, My Name is Nas :)</p>
+      <p class="landing-header">Welcome, My Name is Nas</p>
       <p class="page-subhead">
         <a href="https://github.com/Nasr-905/" target="_blank">
           GitHub

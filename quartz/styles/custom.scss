@@ -12,7 +12,7 @@
 // put your custom CSS here!
 
 :root {
-  --gold: rgba(234, 157, 52, 1);
+  font-size: 18px;
 }
 
 @media all and ($mobile) {
@@ -102,6 +102,7 @@
     font-weight: 700;
     animation: loopText 90s infinite linear;
     line-height: unset;
+    font-size: 13px;
   }
   
   @keyframes loopText {
@@ -115,3 +116,4 @@
   }
   
   /* HEADER AT TOP OF WEBSITE */
+  

@@ -28,6 +28,7 @@
   
   /* ISSUE CARDS */
   .issue-container {
+    padding: 0 1rem;
     display: grid;
     grid-template-rows: auto;
     grid-template-columns: repeat(4, 1fr);
@@ -46,9 +47,14 @@
     }
 
   }
-  
+  .left {
+    .card {
+      height: clamp(10vh, 25vh, 15.5vw); // Adjust the values as needed
+      width: 12vw; // Set a fixed width  
+    }
+  }
   .card {
-    background-color: var(--card-background);
+    background-color: var(--lightgray);
     border-radius: 8px;
     aspect-ratio: 8.5 / 11;
     padding: 12px;
@@ -56,7 +62,7 @@
     transition: transform 0.3s;
     overflow: hidden;
     cursor: pointer;
-
+    
   }
   
   .header-card {

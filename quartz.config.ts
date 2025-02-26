@@ -24,8 +24,8 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Germania One",
-        body: "Atkinson Hyperlegible",
+        header: "Grenze",
+        body: "Radley",
         code: "IBM Plex Mono",
       },
       // All the colors get overriden by the theme
