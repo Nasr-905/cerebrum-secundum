@@ -313,7 +313,7 @@ export function renderPage(
               {slug === "index" && ( <>
               <LandingComponent {...componentData} />
               </>
-            )}
+              )}
               {slug === "index" && <RecentNotes {...componentData} />}
               <hr />
                 <div class="page-footer">
