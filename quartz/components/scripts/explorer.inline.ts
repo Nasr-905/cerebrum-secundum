@@ -36,23 +36,11 @@ function toggleExplorer(this: HTMLElement) {
   content.classList.toggle("collapsed")
   content.classList.toggle("explorer-viewmode")
 
-  // Toggle collapsed class on html and body
-  // document.documentElement.classList.toggle("no-scroll")
-  // document.body.classList.toggle("no-scroll")
-
-  // Toggle collapsed class on elements with class name floating-button
-  document.querySelectorAll(".floating-button").forEach((button) => {
-    button.classList.toggle("collapsed")
-  })
-
   // Prevent scroll under
   if (document.querySelector("#mobile-explorer")) {
     // Disable scrolling on the page when the explorer is opened on mobile
     const bodySelector = document.querySelector("#quartz-body")
-    if (bodySelector) {
-      bodySelector.classList.toggle("lock-scroll")
-      bodySelector.classList.toggle("no-scroll")
-    }
+    if (bodySelector) bodySelector.classList.toggle("lock-scroll")
   }
 }
 
@@ -226,11 +214,3 @@ function toggleCollapsedByPath(array: FolderState[], path: string) {
     entry.collapsed = !entry.collapsed
   }
 }
-
-// Set up event listeners for the explorer buttons
-document.addEventListener("nav", function () {
-  const mobileExplorerButton = document.getElementById("mobile-explorer")
-  if (mobileExplorerButton) {
-    mobileExplorerButton.addEventListener("click", toggleExplorer)
-  }
-})

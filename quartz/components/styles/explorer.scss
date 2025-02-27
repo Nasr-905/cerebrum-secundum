@@ -28,7 +28,7 @@
 
 .explorer {
   display: flex;
-  height: 50vh;
+  height: 100%;
   flex-direction: column;
   overflow-y: hidden;
 
@@ -132,7 +132,7 @@ button#desktop-explorer {
   visibility: hidden;
 
   &.collapsed {
-    max-height: calc(20% + (100vh - 400px) / 2);
+    max-height: 100%;
     transition:
       max-height 0.35s ease,
       visibility 0s linear 0s;
@@ -296,15 +296,12 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
 }
 
 .no-scroll {
-  // opacity: 0;
+  opacity: 0;
   overflow: hidden;
 }
 
 html:has(.no-scroll) {
   overflow: hidden;
-}
-button.floating-button.collapsed {
-  display: none;
 }
 
 @media all and not ($mobile) {
