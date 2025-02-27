@@ -59,7 +59,7 @@ export const sharedPageComponents: SharedLayout = {
     footer: Component.Footer({
     links: {
       GitHub: "https://github.com/Nasr-905/",
-      Resume: "/resume",
+      Resume: "/resume.pdf",
       "Email": "mailto:oladimeji@nasrudeen.com",
       "Call": "tel:+1-647-615-7797",
       "Contact Me (Anon Option)": "/contact",
