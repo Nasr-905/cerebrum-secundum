@@ -271,7 +271,6 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
       &.collapsed {
         transform: translateX(0);
         visibility: visible;
-        overflow-x: hidden;
       }
     }
 
@@ -294,6 +293,24 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
       }
     }
   }
+}
+
+@media all and ($mobile) {
+    // Hide overflow when explorer-content is collapsed
+    html.collapsed,
+    body.collapsed {
+      overflow: hidden;
+    }  .explorer {
+      #explorer-content {
+        padding: 0 2rem 2rem;
+      }
+    }
+    // .floating-buttons.collapsed {
+    //   display: none;
+    // }
+}
+.floating-buttons:has(.collapsed) {
+  display: none;
 }
 
 .no-scroll {

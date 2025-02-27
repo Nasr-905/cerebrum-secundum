@@ -14,7 +14,9 @@
 // :root {
 //   font-size: 18px;
 // }
-
+button.floating-button.collapsed {
+  display: none;
+}
 @media all and ($mobile) {
   .page > #quartz-body {
     .sidebar.left {
