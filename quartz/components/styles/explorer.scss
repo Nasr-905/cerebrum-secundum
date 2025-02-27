@@ -271,6 +271,7 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
       &.collapsed {
         transform: translateX(0);
         visibility: visible;
+        overflow-x: hidden;
       }
     }
 
