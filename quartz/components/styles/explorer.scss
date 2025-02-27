@@ -296,7 +296,7 @@ li:has(> .folder-outer:not(.open)) > .folder-container > svg {
 }
 
 .no-scroll {
-  opacity: 0;
+  // opacity: 0;
   overflow: hidden;
 }
 
