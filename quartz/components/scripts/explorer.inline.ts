@@ -37,12 +37,10 @@ function toggleExplorer(this: HTMLElement) {
   content.classList.toggle("explorer-viewmode")
 
   // Toggle collapsed class on html and body
-  console.log("Toggling collapsed class on html and body")
-  document.documentElement.classList.toggle("collapsed")
-  document.body.classList.toggle("collapsed")
+  // document.documentElement.classList.toggle("collapsed")
+  // document.body.classList.toggle("collapsed")
 
   // Toggle collapsed class on elements with class name floating-button
-  console.log("Toggling collapsed class on floating-button elements")
   document.querySelectorAll(".floating-button").forEach((button) => {
     button.classList.toggle("collapsed")
   })
