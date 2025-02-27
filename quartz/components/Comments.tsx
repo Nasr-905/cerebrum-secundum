@@ -55,11 +55,11 @@ export default ((opts: Options) => {
   }
 
   Comments.afterDOMLoaded = script
-  Comments.css = `
-  .giscus {
-    margin: 0 1rem;
-  }
-  `
+  // Comments.css = `
+  // .giscus {
+  //   padding: 0 1rem;
+  // }
+  // `
 
   return Comments
 }) satisfies QuartzComponentConstructor<Options>

@@ -4,7 +4,6 @@
   .page > #quartz-body {
     // Shift page position when toggling Explorer on mobile.
     & > :not(.sidebar.left:has(.explorer)) {
-      // transform: translateX(0); removed to get global graph working on mobile
       transition: transform 300ms ease-in-out;
     }
     &.lock-scroll > :not(.sidebar.left:has(.explorer)) {
@@ -29,10 +28,9 @@
 
 .explorer {
   display: flex;
-  height: 100%;
+  height: 50vh;
   flex-direction: column;
   overflow-y: hidden;
-  height: 40vh;
 
   @media all and ($mobile) {
     order: -1;
@@ -134,7 +132,7 @@ button#desktop-explorer {
   visibility: hidden;
 
   &.collapsed {
-    max-height: 100%;
+    max-height: calc(20% + (100vh - 400px) / 2);
     transition:
       max-height 0.35s ease,
       visibility 0s linear 0s;

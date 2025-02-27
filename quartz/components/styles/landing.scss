@@ -50,11 +50,11 @@
   .left {
     .card {
       height: clamp(10vh, 25vh, 15.5vw); // Adjust the values as needed
-      width: 12vw; // Set a fixed width  
+      width: 90%; // Set a fixed width  
     }
   }
   .card {
-    background-color: var(--lightgray);
+    background-color: #0000;
     border-radius: 8px;
     aspect-ratio: 8.5 / 11;
     padding: 12px;
