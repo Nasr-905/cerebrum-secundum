@@ -49,8 +49,10 @@
   }
   .left {
     .card {
-      height: clamp(10vh, 25vh, 15.5vw); // Adjust the values as needed
-      width: 90%; // Set a fixed width  
+      @media screen and not (max-width: 800px) {
+        height: clamp(10vh, 25vh, 20vh); // Adjust the values as needed
+        width: 90%; // Set a fixed width
+      }
     }
   }
   .card {
