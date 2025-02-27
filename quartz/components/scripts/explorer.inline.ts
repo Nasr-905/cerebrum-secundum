@@ -18,10 +18,6 @@ const observer = new IntersectionObserver((entries) => {
 })
 
 function toggleExplorer(this: HTMLElement) {
-  // Toggle collapsed class on elements with class name floating-button
-  document.querySelectorAll(".floating-button").forEach((button) => {
-    button.classList.toggle("collapsed")
-  })
   
   // Toggle collapsed state of entire explorer
   this.classList.toggle("collapsed")
