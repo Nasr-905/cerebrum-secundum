@@ -87,6 +87,10 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
 
             if (socialImage) data.socialImage = socialImage
 
+            // Extract image field from frontmatter
+            const image = coalesceAliases(data, ["image"])
+            if (image) data.image = image
+
             // fill in frontmatter
             file.data.frontmatter = data as QuartzPluginData["frontmatter"]
           }
@@ -114,6 +118,7 @@ declare module "vfile" {
         cssclasses: string[]
         socialImage: string
         comments: boolean | string
+        image: string // Add image field here
       }>
   }
 }

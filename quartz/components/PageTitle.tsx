@@ -15,14 +15,28 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
   const card = slugKey in CARDS ? CARDS[slugKey as keyof typeof CARDS] : CARDS["Home"];
 
   return (
-      <div class="header-card">{card}</div>
+      <div class = "page-title-container">
+        <div class="header-card">{card}</div>
+        <h2 class={classNames(displayClass, "page-title")}>
+          <a href={baseDir}>{title}</a>
+        </h2>
+      </div>
   )
 }
 
 PageTitle.css = `
 .page-title {
   font-size: 1.75rem;
-margin: 0 0 1rem 0;
+  margin: 0 0 1rem 0;
+}
+
+@media (min-width: 800px) {
+  .page-title {
+    display: none;
+  }
+}
+.header-card {
+  width: 100%;
 }
 `
 

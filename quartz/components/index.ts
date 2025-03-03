@@ -25,6 +25,8 @@ import FloatingButtons from "./FloatingButtons"
 import Contact from "./Contact"
 import OnlyFor from "./OnlyFor"
 import NotFor from "./NotFor"
+import Timeline from "./timeline"
+import OverlayExplorer from "./OverlayExplorer"
 
 export {
   ArticleTitle,
@@ -54,4 +56,6 @@ export {
   Contact,
   OnlyFor,
   NotFor,
+  Timeline,
+  OverlayExplorer,
 }

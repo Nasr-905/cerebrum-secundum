@@ -52,6 +52,7 @@
     "globby": "^14.1.0",
     "gray-matter": "^4.0.3",
     "hast-util-find-and-replace": "^5.0.1",
+    "hast-util-select": "^6.0.4",
     "hast-util-to-html": "^9.0.4",
     "hast-util-to-jsx-runtime": "^2.3.2",
     "hast-util-to-string": "^3.0.1",

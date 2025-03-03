@@ -13,7 +13,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Component.OnlyFor({ titles: ["contact"]}, Component.Contact({ workerUrl: "https://contact-form.nasrudeenoladimeji.workers.dev/" })
     ),
-    Component.NotFor({ titles: ["contact"]}, Component.Comments({
+    Component.NotFor({ titles: ["contact", "Blog"]}, Component.Comments({
       provider: "giscus",
       options: {
         // from data-repo
@@ -81,7 +81,8 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.Explorer({ filterFn: explorerFilterFn }),
+    Component.MobileOnly(Component.OverlayExplorer()),
+    Component.DesktopOnly(Component.Explorer({ filterFn: explorerFilterFn })),
     Component.FloatingButtons({
       position: 'right',
     }),
@@ -131,7 +132,8 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.Explorer({ filterFn: explorerFilterFn }),
+    Component.MobileOnly(Component.OverlayExplorer()),
+    Component.DesktopOnly(Component.Explorer({ filterFn: explorerFilterFn })),
     Component.FloatingButtons({
       position: 'right',
     }),

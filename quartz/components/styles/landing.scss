@@ -53,6 +53,9 @@
         height: clamp(10vh, 25vh, 20vh); // Adjust the values as needed
         width: 90%; // Set a fixed width
       }
+      @media screen and (max-width: 800px) {
+        display: none;
+      }
     }
   }
   .card {
@@ -68,7 +71,7 @@
   }
   
   .header-card {
-    width: 100px;
+    width: 100%;
     margin: 1em 0 0;
     display: inline-block;
     .card {
@@ -81,7 +84,7 @@
   .card-title {
     text-align: center;
     font-family: var(--headerFont);
-    font-size: clamp(16px,250%,40px);
+    font-size: 250%;
     margin: 0 0 8px 0;
     line-height: normal;
     color: var(--text-normal);

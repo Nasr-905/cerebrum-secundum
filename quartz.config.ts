@@ -57,6 +57,20 @@ const config: QuartzConfig = {
   },
   plugins: {
     transformers: [
+      Plugin.Remark42({
+        host: "http://35.239.133.219:8080",
+        site_id: "remark",
+        // components: Array<String>,
+        // max_shown_comments: number,
+        // max_last_comments: number,
+        // theme: 'light' | 'dark',
+        // page_title: string, // Don't use this, it'll break your comment database. It's included for the sake of completeness.
+        // locale: string, // Technically an enum, full list at https://remark42.com/docs/configuration/frontend/#locales
+        // show_email_subscription: boolean,
+        // show_rss_subscription: boolean,
+        // simple_view: boolean,
+        no_footer: true,
+      }),
       Plugin.Staticrypt(),
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
@@ -75,14 +89,19 @@ const config: QuartzConfig = {
       Plugin.TableOfContents(),
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
+      Plugin.Image(),
       Plugin.Latex({ renderEngine: "mathjax" }),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
+      Plugin.TimelinePages({
+        limit: 100,
+      }),
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
       Plugin.FolderPage(),
+      Plugin.timelineFolderPage(),
       Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,

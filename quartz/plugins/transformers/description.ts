@@ -18,6 +18,23 @@ const urlRegex = new RegExp(
   "g",
 )
 
+// Function to remove LaTeX content
+function removeLaTeX(text: string): string {
+  // Remove inline LaTeX: $...$
+  text = text.replace(/\$[^$\n]+\$/g, '')
+  
+  // Remove display LaTeX: $$...$$
+  text = text.replace(/\$\$[\s\S]+?\$\$/g, '')
+  
+  // Remove \begin{...} ... \end{...} environments
+  text = text.replace(/\\begin\{[^}]+\}[\s\S]+?\\end\{[^}]+\}/g, '')
+  
+  // Remove standalone LaTeX commands
+  text = text.replace(/\\[a-zA-Z]+(\{[^}]*\})?/g, '')
+  
+  return text.trim()
+}
+
 export const Description: QuartzTransformerPlugin<Partial<Options>> = (userOpts) => {
   const opts = { ...defaultOptions, ...userOpts }
   return {
@@ -28,6 +45,10 @@ export const Description: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
           return async (tree: HTMLRoot, file) => {
             let frontMatterDescription = file.data.frontmatter?.description
             let text = escapeHTML(toString(tree))
+
+            // Remove LaTeX from both frontmatter description and main text
+            frontMatterDescription = frontMatterDescription ? removeLaTeX(frontMatterDescription) : frontMatterDescription
+            text = removeLaTeX(text)
 
             if (opts.replaceExternalLinks) {
               frontMatterDescription = frontMatterDescription?.replace(
@@ -80,3 +101,5 @@ declare module "vfile" {
     text: string
   }
 }
+
+// Added the removeLaTeX function to remove LaTeX content from the description and text fields

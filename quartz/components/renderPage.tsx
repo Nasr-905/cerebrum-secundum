@@ -325,7 +325,7 @@ export function renderPage(
             {RightComponent}
             {/* the if statements like being in divs ig */}
             <Footer {...componentData} />
-            
+            <div id="remark42"></div>
           </Body>
         </div>
       </body>
