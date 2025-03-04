@@ -13,48 +13,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Component.OnlyFor({ titles: ["contact"]}, Component.Contact({ workerUrl: "https://contact-form.nasrudeenoladimeji.workers.dev/" })
     ),
-    Component.NotFor({ titles: ["contact", "Blog"]}, Component.Comments({
-      provider: "giscus",
-      options: {
-        // from data-repo
-        repo: 'Nasr-905/cerebrum-secundum',
-        // from data-repo-id
-        repoId: 'R_kgDON9eRwg',
-        // from data-category
-        category: 'Announcements',
-        // from data-category-id
-        categoryId: 'DIC_kwDON9eRws4CnMrh',
-     
-        // Url to folder with custom themes
-        // defaults to 'https://${cfg.baseUrl}/static/giscus'
-        themeUrl: "/themes",
-     
-        // filename for light theme .css file
-        // defaults to 'light'
-        lightTheme: "gruvbox_light",
-     
-        // filename for dark theme .css file
-        // defaults to 'dark'
-        darkTheme: "gruvbox_dark",
-     
-        // how to map pages -> discussions
-        // defaults to 'url'
-        // mapping?: "url" | "title" | "og:title" | "specific" | "number" | "pathname"
-     
-        // use strict title matching
-        // defaults to true
-        // strict?: boolean
-     
-        // whether to enable reactions for the main post
-        // defaults to true
-        // reactionsEnabled?: boolean
-     
-        // where to put the comment input box relative to the comments
-        // defaults to 'bottom'
-        inputPosition: "top",
-      }
-    })
-  ),
+    Component.NotFor({ titles: ["contact"]}, Component.Remark),
   ],
     footer: Component.Footer({
     links: {

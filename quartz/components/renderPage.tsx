@@ -274,7 +274,7 @@ export function renderPage(
 
   const LandingComponent = Landing()
   const lang = componentData.fileData.frontmatter?.lang ?? cfg.locale?.split("-")[0] ?? "en"
-
+  const CARDS = getCards(false)
   const doc = (
     <html lang={lang}>
       <Head {...componentData} />
@@ -325,7 +325,11 @@ export function renderPage(
             {RightComponent}
             {/* the if statements like being in divs ig */}
             <Footer {...componentData} />
-            <div id="remark42"></div>
+            <div>
+            {  !(slug.split("/")[0] in CARDS) && slug !== "contact"  && (
+              <div id="remark42"></div>
+            )}
+            </div>
           </Body>
         </div>
       </body>

@@ -27,6 +27,7 @@ import OnlyFor from "./OnlyFor"
 import NotFor from "./NotFor"
 import Timeline from "./timeline"
 import OverlayExplorer from "./OverlayExplorer"
+import Remark from "./Remark"
 
 export {
   ArticleTitle,
@@ -58,4 +59,5 @@ export {
   NotFor,
   Timeline,
   OverlayExplorer,
+  Remark,
 }
