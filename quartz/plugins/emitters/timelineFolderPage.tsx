@@ -107,7 +107,7 @@ export const timelineFolderPage: QuartzEmitterPlugin<Partial<FolderPageOptions>>
         const [tree, file] = folderDescriptions[folder]
         const externalResources = pageResources(pathToRoot(slug), file.data, resources)
 
-        const timelineEvents = getTimelineEvents(content, new Set(), new Set(), false).filter(
+        const timelineEvents = getTimelineEvents(content, new Set(["Blog/index", "CV/index", "Notes/index", "Poetry/index", "Recipes/index", "Git/index", "Obsidian-Tutorials/index"]), new Set(), false).filter(
           (event) => {
             if (folder === ".") return true
             // Handle subfolders by checking if the event's folder starts with our current folder

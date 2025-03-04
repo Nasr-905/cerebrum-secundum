@@ -243,20 +243,29 @@ export function renderPage(
     </div>
   )
 
-
   const filterByDirectory = (directory: string) => (f: QuartzPluginData) => {
     if (typeof f.relativePath === "string") {
       return f.relativePath.startsWith(directory + "/");
     }
     return false;
-  };  
+  };
+
+  const additionalFilter = (f: QuartzPluginData) => {
+    // Add your custom filtering logic here
+    // For example, filter out posts with a specific tag or title
+    return f.frontmatter?.title !== "Blog";
+  };
+
+  const combinedFilter = (f: QuartzPluginData) => {
+    return filterByDirectory("Blog")(f) && additionalFilter(f);
+  };
 
   const RecentNotes = Recent({
     title: "Recent Blog Posts",
     limit: 5,
     linkToMore: "/Blog" as SimpleSlug,
     showTags: true,
-    filter: filterByDirectory("Blog"),
+    filter: combinedFilter,
     // sort: (f1: QuartzPluginData, f2: QuartzPluginData) => {
     //   // Get both created and modified dates
     //   const date1Created = f1.dates?.created ? new Date(f1.dates.created).getTime() : 0
@@ -325,11 +334,11 @@ export function renderPage(
             {RightComponent}
             {/* the if statements like being in divs ig */}
             <Footer {...componentData} />
-            <div>
-            {  !(slug.split("/")[0] in CARDS) && slug !== "contact"  && (
+            {/* <div>
+            {  (!(slug in CARDS) && slug !== "contact")  && (
               <div id="remark42"></div>
             )}
-            </div>
+            </div> */}
           </Body>
         </div>
       </body>

@@ -6,10 +6,10 @@ export const TOTAL_CARDS = 8
 
 export const getCards = (isIndex?: boolean) => ({
 
-    Projects: (
-        <a href={isIndex ? "/My-CV" : "/"} target="_blank">
+    CV: (
+        <a href={isIndex ? "/CV" : "/"} target="_blank">
           <div class="card card-1">
-            <p class="card-title highlight">Projects</p>
+            <p class="card-title highlight">CV & Projects</p>
             <p class="card-subhead highlight">What I do instead of touching grass</p>
           </div>
         </a>

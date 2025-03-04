@@ -1,7 +1,12 @@
-import { QuartzComponent, QuartzComponentConstructor } from "./types"
+import { QuartzComponentConstructor } from "./types"
 
-const Remark: QuartzComponent = () => {
-  return <div id="remark42"></div>
-}
+// @ts-ignore
 
-export default (() => Remark) satisfies QuartzComponentConstructor
+export default ((userOpts?: Options) => {
+
+    function Remark() {
+        return  (<div id="remark42"></div>);
+    }
+  return Remark;
+}) satisfies QuartzComponentConstructor;
+

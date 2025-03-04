@@ -13,7 +13,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [
     Component.OnlyFor({ titles: ["contact"]}, Component.Contact({ workerUrl: "https://contact-form.nasrudeenoladimeji.workers.dev/" })
     ),
-    Component.NotFor({ titles: ["contact"]}, Component.Remark),
+    Component.NotFor({ titles: ["contact", "Blog", "My CV", "Notes", "Poetry", "Recipes", "Git", "Obsidian Tutorials"]}, Component.Remark()),
   ],
     footer: Component.Footer({
     links: {
