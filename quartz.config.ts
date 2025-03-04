@@ -58,7 +58,7 @@ const config: QuartzConfig = {
   plugins: {
     transformers: [
       Plugin.Remark42({
-        host: "http://35.239.133.219:8080",
+        host: "remark.nasrudeen.com",
         site_id: "remark",
         // components: Array<String>,
         // max_shown_comments: number,
