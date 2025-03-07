@@ -112,7 +112,7 @@ export const TimelineFolderPage: QuartzEmitterPlugin<Partial<FolderPageOptions>>
             if (folder === ".") return true
             // Handle subfolders by checking if the event's folder starts with our current folder
             return (
-              event.type === "created" &&
+              event.type === "modified" &&
               (event.folder === folder || event.folder?.startsWith(folder + "/"))
             )
           },

@@ -105,7 +105,7 @@ export const TimelineTagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (us
         const timelineEvents = getTimelineEvents(content, new Set(), new Set(), false).filter(
           (event) => {
             if (tag === "index") return true
-            return event.type === "created" && event.tags?.includes(tag)
+            return event.type === "modified" && event.tags?.includes(tag)
           },
         )
 
