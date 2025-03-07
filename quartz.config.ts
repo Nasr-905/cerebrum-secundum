@@ -9,7 +9,7 @@ import * as Plugin from "./quartz/plugins"
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "❯ NAS",
-    pageTitleSuffix: " | Cerebrum Secundum",
+    pageTitleSuffix: " | Nasrudeen Oladimeji",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
@@ -18,7 +18,7 @@ const config: QuartzConfig = {
     locale: "en-US",
     baseUrl: "nasrudeen.com",
     ignorePatterns: ["Private", ".obsidian"],
-    defaultDateType: "created",
+    defaultDateType: "modified",
     generateSocialImages: true, // controls whether social media images are automatically generated for the content
     theme: {
       fontOrigin: "googleFonts",
@@ -66,8 +66,8 @@ const config: QuartzConfig = {
         // theme: 'light' | 'dark',
         // page_title: string, // Don't use this, it'll break your comment database. It's included for the sake of completeness.
         // locale: string, // Technically an enum, full list at https://remark42.com/docs/configuration/frontend/#locales
-        // show_email_subscription: boolean,
-        // show_rss_subscription: boolean,
+        show_email_subscription: true,
+        show_rss_subscription: true,
         // simple_view: boolean,
         no_footer: true,
       }),
@@ -101,8 +101,9 @@ const config: QuartzConfig = {
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
       Plugin.FolderPage(),
-      Plugin.timelineFolderPage(),
-      Plugin.TagPage(),
+      Plugin.TimelineFolderPage(),
+      Plugin.TimelineTagPage(),
+      // Plugin.TagPage(),
       Plugin.ContentIndex({
         enableSiteMap: true,
         enableRSS: true,

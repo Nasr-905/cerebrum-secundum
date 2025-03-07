@@ -34,7 +34,7 @@ export async function encryptPages() {
       "--remember", "false",
       "--config", "false",
       "--template-color-secondary", "#FDF5E3",
-      "--template-instructions", "First refresh, and then enter password to show the content of this page.<br/><br/><a href='/' style='text-decoration:underline wavy;color:inherit'>🏡 Return</a>" ,
+      "--template-instructions", "This page is either under construction or covers work still under NDA. If you have authorization, please enter below. If you should be given access please <a href='/contact' style='text-decoration:underline wavy;color:inherit'>contact me</a><br/><br/><a href='/' style='text-decoration:underline wavy;color:inherit'>🏡 Return</a>" ,
       "--template-error", "That password was incorrect.",
       "--template-button", "Unlock 🔓",
       "--salt", "37fc04161cf85ad50c931b3214c6ad34"

@@ -334,11 +334,6 @@ export function renderPage(
             {RightComponent}
             {/* the if statements like being in divs ig */}
             <Footer {...componentData} />
-            {/* <div>
-            {  (!(slug in CARDS) && slug !== "contact")  && (
-              <div id="remark42"></div>
-            )}
-            </div> */}
           </Body>
         </div>
       </body>

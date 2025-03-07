@@ -10,11 +10,6 @@ const explorerFilterFn = (node: FileNode) => {
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [
-    Component.OnlyFor({ titles: ["contact"]}, Component.Contact({ workerUrl: "https://contact-form.nasrudeenoladimeji.workers.dev/" })
-    ),
-    Component.NotFor({ titles: ["contact", "Blog", "My CV", "Notes", "Poetry", "Recipes", "Git", "Obsidian Tutorials"]}, Component.Remark()),
-  ],
     footer: Component.Footer({
     links: {
       GitHub: "https://github.com/Nasr-905/",
@@ -34,6 +29,11 @@ export const defaultContentPageLayout: PageLayout = {
     Component.ArticleTitle(),
     Component.ContentMeta(),
     Component.TagList(),
+  ],
+  afterBody: [
+    Component.OnlyFor({ titles: ["contact"]}, Component.Contact({ workerUrl: "https://contact-form.nasrudeenoladimeji.workers.dev/" })
+    ),
+    Component.NotFor({ titles: ["contact"]}, Component.Remark()),
   ],
   left: [
     Component.PageTitle(),
@@ -86,6 +86,7 @@ export const defaultContentPageLayout: PageLayout = {
 // components for pages that display lists of pages  (e.g. tags or folders)
 export const defaultListPageLayout: PageLayout = {
   beforeBody: [Component.Breadcrumbs(), Component.ArticleTitle(), Component.ContentMeta()],
+  afterBody: [],
   left: [
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),

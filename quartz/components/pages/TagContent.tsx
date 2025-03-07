@@ -30,7 +30,7 @@ export default ((opts?: Partial<TagContentOptions>) => {
     const tag = simplifySlug(slug.slice("tags/".length) as FullSlug)
     const allPagesWithTag = (tag: string) =>
       allFiles.filter((file) =>
-        (file.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).includes(tag),
+        (file.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).some((t) => t.startsWith(`${tag}/`)),
       )
 
     const content =

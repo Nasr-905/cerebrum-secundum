@@ -26,7 +26,7 @@ interface FolderPageOptions extends FullPageLayout {
   sort?: (f1: QuartzPluginData, f2: QuartzPluginData) => number
 }
 
-export const timelineFolderPage: QuartzEmitterPlugin<Partial<FolderPageOptions>> = (userOpts) => {
+export const TimelineFolderPage: QuartzEmitterPlugin<Partial<FolderPageOptions>> = (userOpts) => {
   const opts: FullPageLayout = {
     ...sharedPageComponents,
     ...defaultListPageLayout,
