@@ -1,5 +1,7 @@
 import { QuartzConfig } from "./quartz/cfg"
 import * as Plugin from "./quartz/plugins"
+import 'dotenv/config';
+const myGoatCounterWebID = process.env.GOATCOUNTER_WEB_ID || "";
 
 /**
  * Quartz 4.0 Configuration
@@ -13,7 +15,8 @@ const config: QuartzConfig = {
     enableSPA: true,
     enablePopovers: true,
     analytics: {
-      provider: "plausible",
+      provider: "goatcounter",
+      websiteId: myGoatCounterWebID,
     },
     locale: "en-US",
     baseUrl: "nasrudeen.com",
