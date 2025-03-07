@@ -20,11 +20,11 @@ export function createTimelineEvents(fileData: any): TimelineEvent[] {
     description: fileData.description // Add description field here
   }
 
-  if (fileData.dates?.modified) {
+  if (fileData.dates?.created) {
     events.push({
       ...baseEvent,
-      type: "modified",
-      date: new Date(fileData.dates.modified),
+      type: "created",
+      date: new Date(fileData.dates.created),
     })
   }
 
@@ -43,7 +43,7 @@ export function getTimelineEvents(
   content: [string, { data: any }][],
   disallowedSlugs: Set<string>,
   disallowedTags: Set<string>,
-  modifiedOnly: boolean = false,
+  createdOnly: boolean = false,
 ) {
   const filteredContent = content
     .filter(([_, file]) => {
@@ -62,7 +62,7 @@ export function getTimelineEvents(
 
   const events = filteredContent
     .flatMap((fileData) => createTimelineEvents(fileData))
-    .filter((event) => !modifiedOnly || event.type === "modified")
+    .filter((event) => !createdOnly || event.type === "created")
     .sort((a, b) => b.date.getTime() - a.date.getTime())
 
   return events
