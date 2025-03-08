@@ -34,7 +34,7 @@ export const sharedPageComponents: SharedLayout = {
     footer: Component.Footer({
     links: {
       GitHub: "https://github.com/Nasr-905/",
-      Resume: "/resume",
+      Resume: "/resume.pdf",
       "Email": "mailto:oladimeji@nasrudeen.com",
       "Call": "tel:+1-647-615-7797",
       "Contact Me (Anon Option)": "/contact",
@@ -52,7 +52,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   afterBody: [
-    Component.OnlyFor({ titles: ["index"]}, Component.RecentNotes({
+    Component.OnlyFor({ titles: ["Cerebrum Secundum"]}, Component.RecentNotes({
         title: "Recent Blog Posts",
         limit: 5,
         linkToMore: "/Blog" as SimpleSlug,
