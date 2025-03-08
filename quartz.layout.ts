@@ -1,10 +1,31 @@
 import { PageLayout, SharedLayout } from "./quartz/cfg"
 import * as Component from "./quartz/components"
 import { FileNode } from "./quartz/components/ExplorerNode"
+import { QuartzPluginData } from "./quartz/plugins/vfile"
+import { SimpleSlug } from "./quartz/util/path"
 
 const explorerFilterFn = (node: FileNode) => {
   return !["tags", "contact"].includes(node.name)
 }
+
+const filterByDirectory = (directory: string) => (f: QuartzPluginData) => {
+  if (typeof f.relativePath === "string") {
+    return f.relativePath.startsWith(directory + "/");
+  }
+  return false;
+};
+
+const additionalFilter = (f: QuartzPluginData) => {
+  // Add your custom filtering logic here
+  // For example, filter out posts with a specific tag or title
+  return f.frontmatter?.title !== "Blog";
+};
+
+const combinedFilter = (f: QuartzPluginData) => {
+  return filterByDirectory("Blog")(f) && additionalFilter(f);
+};
+
+
 
 // components shared across all pages
 export const sharedPageComponents: SharedLayout = {
@@ -31,6 +52,14 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   afterBody: [
+    Component.OnlyFor({ titles: ["index"]}, Component.RecentNotes({
+        title: "Recent Blog Posts",
+        limit: 5,
+        linkToMore: "/Blog" as SimpleSlug,
+        showTags: true,
+        filter: combinedFilter,
+      }),
+    ),
     Component.OnlyFor({ titles: ["contact"]}, Component.Contact({ workerUrl: "https://contact-form.nasrudeenoladimeji.workers.dev/" })
     ),
     Component.NotFor({ titles: ["contact"]}, Component.Remark()),

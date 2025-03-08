@@ -77,7 +77,7 @@ const config: QuartzConfig = {
       Plugin.Staticrypt(),
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        priority: ["frontmatter", "filesystem"],
+        priority: ["frontmatter", "git"],
       }),
       Plugin.TelescopicText(),
       Plugin.SyntaxHighlighting({
