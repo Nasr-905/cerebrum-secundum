@@ -15,6 +15,8 @@ export function getDate(cfg: GlobalConfiguration, data: QuartzPluginData): Date 
       `Field 'defaultDateType' was not set in the configuration object of quartz.config.ts. See https://quartz.jzhao.xyz/configuration#general-configuration for more details.`,
     )
   }
+  console.log(data.frontmatter?.title)
+  console.log(data.dates)
   return data.dates?.[cfg.defaultDateType]
 }
 
