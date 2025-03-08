@@ -11,7 +11,7 @@ const myGoatCounterWebID = process.env.GOATCOUNTER_WEB_ID || "";
 const config: QuartzConfig = {
   configuration: {
     pageTitle: "❯ NAS",
-    pageTitleSuffix: " | Nasrudeen Oladimeji",
+    pageTitleSuffix: " | NAS",
     enableSPA: true,
     enablePopovers: true,
     analytics: {
@@ -22,7 +22,10 @@ const config: QuartzConfig = {
     baseUrl: "nasrudeen.com",
     ignorePatterns: ["Private", ".obsidian"],
     defaultDateType: "created",
-    generateSocialImages: true, // controls whether social media images are automatically generated for the content
+    generateSocialImages: {
+      colorScheme: "darkMode",
+      excludeRoot: false,
+    },
     theme: {
       fontOrigin: "googleFonts",
       cdnCaching: true,
