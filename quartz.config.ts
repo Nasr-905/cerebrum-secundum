@@ -24,7 +24,7 @@ const config: QuartzConfig = {
     defaultDateType: "created",
     generateSocialImages: {
       colorScheme: "darkMode",
-      excludeRoot: false,
+      excludeRoot: true,
     },
     theme: {
       fontOrigin: "googleFonts",
