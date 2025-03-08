@@ -241,7 +241,7 @@ export default (() => {
     }
 
     .timeline-image img {
-      width: 100%;
+      max-width: 100%;
       height: 100%;
       object-fit: cover; /* This will crop the image while maintaining aspect ratio */
       object-position: center; /* This centers the cropped area */
