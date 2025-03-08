@@ -15,9 +15,11 @@
 //   font-size: 18px;
 // }
 
-.MathJax {
-  display: block;
-  overflow: auto;
+mjx-container {
+  display: inline-flex;
+  overflow-x: auto;
+  overflow: hidden;
+  max-width: 100%;
 }
 
 @media all and ($mobile) {
