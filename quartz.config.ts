@@ -93,7 +93,71 @@ const config: QuartzConfig = {
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
       Plugin.Image(),
-      Plugin.Latex({ renderEngine: "mathjax" }),
+      Plugin.Latex({
+        renderEngine: "mathjax",
+        // customMacros: {
+        //   "\\RR": "\\mathbb{R}",
+        //   "\\NN": "\\mathbb{N}",
+        //   "\\ZZ": "\\mathbb{Z}",
+        //   "\\QQ": "\\mathbb{Q}",
+        //   "\\CC": "\\mathbb{C}",
+        // },
+        // mathJaxOptions: {
+        //   tex: {
+        //     packages: ['base'],        // extensions to use
+        //     inlineMath: [              // start/end delimiter pairs for in-line math
+        //       ['\\(', '\\)']
+        //     ],
+        //     displayMath: [             // start/end delimiter pairs for display math
+        //       ['$$', '$$'],
+        //       ['\\[', '\\]']
+        //     ],
+        //     processEscapes: true,      // use \$ to produce a literal dollar sign
+        //     processEnvironments: true, // process \begin{xxx}...\end{xxx} outside math mode
+        //     processRefs: true,         // process \ref{...} outside of math mode
+        //     digits: /^(?:[0-9]+(?:\{,\}[0-9]{3})*(?:\.[0-9]*)?|\.[0-9]+)/,
+        //                                // pattern for recognizing numbers
+        //     tags: 'none',              // or 'ams' or 'all'
+        //     tagSide: 'right',          // side for \tag macros
+        //     tagIndent: '0.8em',        // amount to indent tags
+        //     useLabelIds: true,         // use label name rather than tag for ids
+        //     maxMacros: 10000,          // maximum number of macro substitutions per expression
+        //     maxBuffer: 5 * 1024,       // maximum size for the internal TeX string (5K)
+        //     baseURL:                   // URL for use with links to tags (when there is a <base> tag in effect)
+        //        (document.getElementsByTagName('base').length === 0) ?
+        //         '' : String(document.location).replace(/#.*$/, ''),
+        //   },
+        //   svg: {
+        //     scale: 1,                      // global scaling factor for all expressions
+        //     minScale: .5,                  // smallest scaling factor to use
+        //     mtextInheritFont: false,       // true to make mtext elements use surrounding font
+        //     merrorInheritFont: true,       // true to make merror text use surrounding font
+        //     mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
+        //     skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
+        //     exFactor: .5,                  // default size of ex in em units
+        //     displayAlign: 'center',        // default for indentalign when set to 'auto'
+        //     displayIndent: '0',            // default for indentshift when set to 'auto'
+        //     fontCache: 'local',            // or 'global' or 'none'
+        //     localID: null,                 // ID to use for local font cache (for single equation processing)
+        //     internalSpeechTitles: true,    // insert <title> tags with speech content
+        //     titleID: 0                     // initial id number to use for aria-labeledby titles        
+        //   },
+        //   chtml: {
+        //     scale: 1,                      // global scaling factor for all expressions
+        //     minScale: .5,                  // smallest scaling factor to use
+        //     mtextInheritFont: false,       // true to make mtext elements use surrounding font
+        //     merrorInheritFont: true,       // true to make merror text use surrounding font
+        //     mathmlSpacing: false,          // true for MathML spacing rules, false for TeX rules
+        //     skipAttributes: {},            // RFDa and other attributes NOT to copy to the output
+        //     exFactor: .5,                  // default size of ex in em units
+        //     displayAlign: 'center',        // default for indentalign when set to 'auto'
+        //     displayIndent: '0',            // default for indentshift when set to 'auto'
+        //     matchFontHeight: true,         // true to match ex-height of surrounding font
+        //     fontURL: '[mathjax]/components/output/chtml/fonts/woff-v2',   // The URL where the fonts are found
+        //     adaptiveCSS: true              // true means only produce CSS that is used in the processed equations                    
+        //   },
+        // }
+      }),
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
