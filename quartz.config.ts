@@ -21,7 +21,7 @@ const config: QuartzConfig = {
     locale: "en-US",
     baseUrl: "nasrudeen.com",
     ignorePatterns: ["Private", ".obsidian"],
-    defaultDateType: "modified",
+    defaultDateType: "created",
     generateSocialImages: true, // controls whether social media images are automatically generated for the content
     theme: {
       fontOrigin: "googleFonts",
@@ -77,7 +77,7 @@ const config: QuartzConfig = {
       Plugin.Staticrypt(),
       Plugin.FrontMatter(),
       Plugin.CreatedModifiedDate({
-        priority: ["frontmatter", "git"],
+        priority: ["frontmatter"],
       }),
       Plugin.TelescopicText(),
       Plugin.SyntaxHighlighting({

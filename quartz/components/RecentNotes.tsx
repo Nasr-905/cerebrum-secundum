@@ -36,7 +36,7 @@ export default ((userOpts?: Partial<Options>) => {
     const pages = allFiles.filter(opts.filter).sort(opts.sort)
     const remaining = Math.max(0, pages.length - opts.limit)
     return (
-      <div class={classNames(displayClass, "recent-notes")} style={{ margin: "1rem" }}>
+      <div class={classNames(displayClass, "recent-notes")}>
         <h3>{opts.title ?? i18n(cfg.locale).components.recentNotes.title}</h3>
         <ul class="recent-ul">
           {pages.slice(0, opts.limit).map((page) => {
@@ -56,6 +56,7 @@ export default ((userOpts?: Partial<Options>) => {
                   {page.dates && (
                     <p class="meta">
                       <Date date={getDate(cfg, page)!} locale={cfg.locale} />
+                    {/* {(page.frontmatter?.date)!} */}
                     </p>
                   )}
                   {opts.showTags && (
