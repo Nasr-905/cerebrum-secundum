@@ -29,13 +29,13 @@ async function generateSocialImage(
     width,
     height,
     fonts,
-    loadAdditionalAsset: async (languageCode: string, segment: string) => {
-      if (languageCode === "emoji") {
-        return `data:image/svg+xml;base64,${btoa(await loadEmoji(getIconCode(segment)))}`
-      }
+    // loadAdditionalAsset: async (languageCode: string, segment: string) => {
+    //   if (languageCode === "emoji") {
+    //     return `data:image/svg+xml;base64,${btoa(await loadEmoji(getIconCode(segment)))}`
+    //   }
 
-      return languageCode
-    },
+    //   return languageCode
+    // },
   })
 
   // Convert svg directly to webp (with additional compression)
