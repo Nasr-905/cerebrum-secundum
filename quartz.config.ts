@@ -4,7 +4,7 @@ import 'dotenv/config';
 const myGoatCounterWebID = process.env.GOATCOUNTER_WEB_ID || "";
 
 /**
- * Quartz 4.0 Configuration
+ * Quartz 4 Configuration
  *
  * See https://quartz.jzhao.xyz/configuration for more information.
  */
