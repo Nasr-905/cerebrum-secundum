@@ -102,10 +102,10 @@ export const TimelineTagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (us
         const [tree, file] = tagDescriptions[tag]
         const externalResources = pageResources(pathToRoot(slug), file.data, resources)
 
-        const timelineEvents = getTimelineEvents(content,new Set(["Blog/index", "CV/index", "Notes/index", "Poetry/index", "Recipes/index", "Git/index", "Obsidian-Tutorials/index"]), new Set(), false).filter(
+        const timelineEvents = getTimelineEvents(content, new Set(), new Set(), false).filter(
           (event) => {
             if (tag === "index") return true
-            return event.type === "created" && event.tags?.includes(tag)
+            return event.type === "created" && event.tags?.some((t) => t === tag || t.startsWith(`${tag}/`))
           },
         )
 

@@ -29,10 +29,19 @@ export default ((opts?: Partial<TagContentOptions>) => {
     }
 
     const tag = simplifySlug(slug.slice("tags/".length) as FullSlug)
-    const allPagesWithTag = (tag: string) =>
-      allFiles.filter((file) =>
-        (file.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes).some((t) => t.startsWith(`${tag}/`)),
-      )
+    const allPagesWithTag = (tag: string) => {
+      const filteredPages = allFiles.filter((file) => {
+        const fileTags = (file.frontmatter?.tags ?? []).flatMap(getAllSegmentPrefixes);
+        const matches = fileTags.some((t) => t === tag || t.startsWith(`${tag}/`)); // Parent & subtags
+        return matches;
+      });
+    
+      console.log(`Tag: ${tag}`, filteredPages.map(f => f.slug)); // Debugging output
+      return filteredPages;
+    };
+    
+    console.log(`Filtering for tag: ${tag}`);
+    console.log("Matching pages:", allPagesWithTag(tag).map((p) => p.slug));
 
     const content = (
       (tree as Root).children.length === 0
