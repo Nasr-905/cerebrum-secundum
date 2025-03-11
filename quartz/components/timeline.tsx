@@ -236,13 +236,14 @@ export default (() => {
 
     .timeline-image {
       margin-bottom: 1rem;
-      height: 250px; /* Set a fixed height */
       overflow: hidden; /* Hide overflow */
+      display: flex;
+      justify-content: center;
+
     }
 
     .timeline-image img {
       max-width: 100%;
-      height: 100%;
       object-fit: cover; /* This will crop the image while maintaining aspect ratio */
       object-position: center; /* This centers the cropped area */
       border-radius: 8px;
