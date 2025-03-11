@@ -248,7 +248,7 @@ export default (() => {
       object-position: center; /* This centers the cropped area */
       border-radius: 8px;
     }
-h
+
     .timeline-description {
       margin-bottom: 1rem;
     }

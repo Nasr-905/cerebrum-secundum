@@ -33,7 +33,11 @@ export const Image: QuartzTransformerPlugin<Partial<Options>> = (userOpts) => {
 function extractFirstImageSrc(tree: HTMLRoot): string | undefined {
   const imgElement = select("img", tree)
   if (imgElement && imgElement.properties && typeof imgElement.properties.src === "string") {
-    return imgElement.properties.src
+    let src = imgElement.properties.src
+    if (src.startsWith("../")) {
+      src = src.replace(/^\.\.\//, "/")
+    }
+    return src
   }
   return undefined
 }
