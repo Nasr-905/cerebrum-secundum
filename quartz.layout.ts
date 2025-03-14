@@ -5,9 +5,8 @@ import { QuartzPluginData } from "./quartz/plugins/vfile"
 import { SimpleSlug } from "./quartz/util/path"
 
 const explorerFilterFn = (node: FileNode) => {
-  return !["tags", "contact"].includes(node.name)
-}
-
+  return !node.file?.frontmatter?.tags?.includes("explorer-exclude");
+};
 const filterByDirectory = (directory: string) => (f: QuartzPluginData) => {
   if (typeof f.relativePath === "string") {
     return f.relativePath.startsWith(directory + "/");
@@ -18,11 +17,11 @@ const filterByDirectory = (directory: string) => (f: QuartzPluginData) => {
 const additionalFilter = (f: QuartzPluginData) => {
   // Add your custom filtering logic here
   // For example, filter out posts with a specific tag or title
-  return f.frontmatter?.title !== "Blog";
+  return !f.frontmatter?.tags?.includes("explorer-exclude");
 };
 
-const combinedFilter = (f: QuartzPluginData) => {
-  return filterByDirectory("Blog")(f) && additionalFilter(f);
+const recentFilterFn = (f: QuartzPluginData) => {
+  return filterByDirectory("Blog")(f) && f.frontmatter?.title !== "Blog" && additionalFilter(f);
 };
 
 
@@ -57,7 +56,7 @@ export const defaultContentPageLayout: PageLayout = {
         limit: 5,
         linkToMore: "/Blog" as SimpleSlug,
         showTags: true,
-        filter: combinedFilter,
+        filter: recentFilterFn,
       }),
     ),
     Component.OnlyFor({ titles: ["contact"]}, Component.Contact({ workerUrl: "https://contact-form.nasrudeenoladimeji.workers.dev/" })
@@ -87,7 +86,7 @@ export const defaultContentPageLayout: PageLayout = {
         linkDistance: 30, // how long should the links be by default?
         fontSize: 0.6, // what size should the node labels be?
         opacityScale: 1, // how quickly do we fade out the labels when zooming out?
-        removeTags: [], // what tags to remove from the graph
+        removeTags: ["search-exclude", "explorer-exclude"], // what tags to remove from the graph
         showTags: true, // whether to show tags in the graph
         enableRadial: false, // whether to constrain the graph, similar to Obsidian
       },
@@ -121,7 +120,7 @@ export const defaultListPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.MobileOnly(Component.OverlayExplorer()),
+    Component.MobileOnly(Component.OverlayExplorer({ filterFn: explorerFilterFn })),
     Component.DesktopOnly(Component.Explorer({ filterFn: explorerFilterFn })),
     Component.FloatingButtons({
       position: 'right',

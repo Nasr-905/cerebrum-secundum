@@ -98,10 +98,10 @@ async function renderGraph(container: string, fullSlug: FullSlug) {
       v,
     ]),
   )
-  // Take out files that have the tags in excludeTags
+  // Take out files that have the tag graph-exclude
   const data: Map<SimpleSlug, ContentDetails> = new Map(
     [...originalData.entries()].filter(([key, value]) => {
-    return !value.tags?.some(tag => excludeTags.includes(tag))
+    return !value.tags?.includes("graph-exclude")
     })
   )
   const links: SimpleLinkData[] = []
