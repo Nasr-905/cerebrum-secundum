@@ -13,7 +13,6 @@ async function navigateToRandomPage() {
       const fileData = data[slug as FullSlug];
       // Add your filtering logic here
       // For example, exclude posts with specific tags
-      console.log(fileData)
       if (!fileData) {
         return true;
       }
@@ -36,7 +35,6 @@ document.addEventListener("nav", async (e: unknown) => {
   button?.addEventListener("click", navigateToRandomPage)
   await setupFloatingButtons();
   const data = await fetchData;
-  console.log(data);
 })
 
 // 全局变量跟踪状态
