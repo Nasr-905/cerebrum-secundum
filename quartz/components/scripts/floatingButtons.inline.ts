@@ -21,7 +21,6 @@ async function navigateToRandomPage() {
       }
 
       return !fileData.tags.includes("search-exclude") &&
-             !fileData.tags.includes("explorer-exclude") &&
              !fileData.tags.includes("graph-exclude") &&
              !fileData.tags.includes("protected");
     });
