@@ -23,7 +23,7 @@ const config: QuartzConfig = {
     ignorePatterns: ["Private", ".obsidian"],
     defaultDateType: "created",
     generateSocialImages: {
-      colorScheme: "darkMode",
+      colorScheme: "lightMode",
       excludeRoot: false,
     },
     theme: {

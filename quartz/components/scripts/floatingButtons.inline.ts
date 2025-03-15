@@ -1,16 +1,32 @@
 import { FullSlug, getFullSlug, pathToRoot, simplifySlug } from "../../util/path"
-
-
-
+import TagList from "../TagList";
 function getRandomInt(max: number) {
-    return Math.floor(Math.random() * max);
-  }
+  return Math.floor(Math.random() * max);
+}
 
 async function navigateToRandomPage() {
-    const fullSlug = getFullSlug(window)
-    const data = await fetchData
-    const allPosts = Object.keys(data).map((slug) => simplifySlug(slug as FullSlug))
-    window.location.href = `${pathToRoot(fullSlug)}/${allPosts[getRandomInt(allPosts.length - 1)]}`
+  const fullSlug = getFullSlug(window)
+  const data = await fetchData
+  const allPosts = Object.keys(data)
+    .map((slug) => simplifySlug(slug as FullSlug))
+    .filter((slug) => {
+      const fileData = data[slug as FullSlug];
+      // Add your filtering logic here
+      // For example, exclude posts with specific tags
+      console.log(fileData)
+      if (!fileData) {
+        return true;
+      }
+      if (!fileData.tags) {
+        return true;
+      }
+
+      return !fileData.tags.includes("search-exclude") &&
+             !fileData.tags.includes("explorer-exclude") &&
+             !fileData.tags.includes("graph-exclude") &&
+             !fileData.tags.includes("protected");
+    });
+  window.location.href = `${pathToRoot(fullSlug)}/${allPosts[getRandomInt(allPosts.length - 1)]}`
 }
 
 document.addEventListener("nav", async (e: unknown) => {
@@ -18,6 +34,9 @@ document.addEventListener("nav", async (e: unknown) => {
   const button = document.getElementById("random-page-button")
   button?.removeEventListener("click", navigateToRandomPage)
   button?.addEventListener("click", navigateToRandomPage)
+  await setupFloatingButtons();
+  const data = await fetchData;
+  console.log(data);
 })
 
 // 全局变量跟踪状态
