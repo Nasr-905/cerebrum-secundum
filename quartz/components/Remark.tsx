@@ -7,7 +7,6 @@ export default ((userOpts?: Options) => {
     function Remark() {
         return (
           <>
-            <hr />
               <h2>Join the Discussion with <a href="https://remark42.com/" class={"internal"} target={"_blank"}>Remark42</a></h2>
               <div id="remark42"></div>
           </>

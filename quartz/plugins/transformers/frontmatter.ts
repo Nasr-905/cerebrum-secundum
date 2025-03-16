@@ -114,6 +114,12 @@ export const FrontMatter: QuartzTransformerPlugin<Partial<Options>> = (userOpts)
             const image = coalesceAliases(data, ["image"])
             if (image) data.image = image
 
+            // Extract next and previous fields from frontmatter
+            const next = coalesceAliases(data, ["next"])
+            if (next) data.next = next
+            const previous = coalesceAliases(data, ["previous"])
+            if (previous) data.previous = previous
+
             // fill in frontmatter
             file.data.frontmatter = data as QuartzPluginData["frontmatter"]
           }
@@ -142,7 +148,9 @@ declare module "vfile" {
         cssclasses: string[]
         socialImage: string
         comments: boolean | string
-        image: string // Add image field here
+        image: string
+        next: string
+        previous: string
       }>
   }
 }

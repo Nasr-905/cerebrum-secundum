@@ -51,6 +51,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.TagList(),
   ],
   afterBody: [
+    Component.PageNav(),
     Component.OnlyFor({ titles: ["Cerebrum Secundum"]}, Component.RecentNotes({
         title: "Recent Blog Posts",
         limit: 5,
@@ -100,7 +101,7 @@ export const defaultContentPageLayout: PageLayout = {
         linkDistance: 30,
         fontSize: 0.3,
         opacityScale: 1,
-        removeTags: [],
+        removeTags: ["search-exclude", "explorer-exclude", "protected"],
         showTags: true,
         enableRadial: true,
       },

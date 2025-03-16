@@ -14,6 +14,7 @@ export function SimpleTagList({ tags, slug, displayClass }: SimpleTagListProps) 
   return (
     <ul className={classNames(displayClass, "tags")}>
       {tags.map((tag) => {
+        // const linkDest = baseDir + `/tags/${slugTag(tag)}` // old
         const linkDest = `/tags/${slugTag(tag)}`
         return (
           <li key={tag}>
