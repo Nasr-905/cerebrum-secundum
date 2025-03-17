@@ -3,9 +3,8 @@ import * as Component from "./quartz/components"
 import { FileNode } from "./quartz/components/ExplorerNode"
 import { QuartzPluginData } from "./quartz/plugins/vfile"
 import { SimpleSlug } from "./quartz/util/path"
-
 const explorerFilterFn = (node: FileNode) => {
-  return !node.file?.frontmatter?.tags?.includes("explorer-exclude");
+  return !node.file?.frontmatter?.tags?.includes("explorer-exclude") && node.name !== "tags";
 };
 const filterByDirectory = (directory: string) => (f: QuartzPluginData) => {
   if (typeof f.relativePath === "string") {
@@ -48,7 +47,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Breadcrumbs(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
-    Component.TagList(),
+    Component.NotFor({ titles: ["contact"]}, Component.TagList()),
   ],
   afterBody: [
     Component.PageNav(),

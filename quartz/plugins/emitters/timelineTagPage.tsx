@@ -97,12 +97,26 @@ export const TimelineTagPage: QuartzEmitterPlugin<Partial<TagPageOptions>> = (us
         }),
       )
 
+      for (const [tree, file] of content) {
+        const slug = file.data.slug!
+        if (slug.startsWith("tags/")) {
+          const tag = slug.slice("tags/".length)
+          const matchedTag = Array.from(tags).find(t => t.replace(/\//g, "") === tag);
+          if (matchedTag) {
+            tagDescriptions[matchedTag] = [tree, file]
+            file.data.slug = joinSegments("tags", matchedTag) as FullSlug
+            if (file.data.frontmatter?.title === tag) {
+              file.data.frontmatter.title = `${i18n(cfg.locale).pages.tagContent.tag}: ${tag}`
+            }
+          }
+        }
+      }
+
       for (const tag of tags) {
         const slug = joinSegments("tags", tag) as FullSlug
         const [tree, file] = tagDescriptions[tag]
         const externalResources = pageResources(pathToRoot(slug), file.data, resources)
-
-        const timelineEvents = getTimelineEvents(content, new Set(), new Set(), false).filter(
+        const timelineEvents = getTimelineEvents(content.map(([tree, file]) => [file.data.slug!, { data: file.data }]), new Set(), new Set(), false).filter(
           (event) => {
             if (tag === "index") return true
             return event.type === "created" && event.tags?.some((t) => t === tag || t.startsWith(`${tag}/`))

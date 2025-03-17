@@ -4,6 +4,10 @@ import { pathToRoot, slugTag } from "../util/path"
 import { Date as DateComponent } from "./Date"
 import { ValidLocale } from "../i18n"
 import { SimpleTagList as TagList } from "./simpleTagList"
+import { Root } from "hast"
+import { htmlToJsx } from "../util/jsx"
+import { ComponentChildren } from "preact"
+
 
 interface TimelineEvent {
   type: "created" | "modified"
@@ -18,7 +22,7 @@ interface TimelineEvent {
 
 export default (() => {
   function Timeline(props: QuartzComponentProps) {
-    const { children: events, cfg } = props
+    const { tree, fileData, allFiles, cfg, children: events } = props
     const locale = cfg?.locale as ValidLocale | undefined
 
     if (events.length === 0) {
@@ -30,56 +34,67 @@ export default (() => {
         </div>
       )
     }
-
+    const content = (
+      (tree as Root).children.length === 0
+        ? fileData.description
+        : htmlToJsx(fileData.filePath!, tree)
+    ) as ComponentChildren
+    const cssClasses: string[] = fileData.frontmatter?.cssclasses ?? []
+    const classes = cssClasses.join(" ")
     return (
-      <div className="timeline">
-        <div className="timeline-container">
-          <div className="timeline-line"></div>
-          {events.map((event: TimelineEvent, i) => (
-            <div
-              key={`${event.slug}-${event.type}-${i}`}
-              className={`timeline-event ${i % 2 === 0 ? "left" : "right"}`}
-            >
-              <div className="timeline-connector">
-                <div className="timeline-dot"></div>
-                <div className="timeline-line-to-content"></div>
-              </div>
-              <div className="timeline-metadata">
-                <div className="timeline-type-date">
-                  <span className="timeline-type">
-                    {event.type === "created" ? "Created" : "Last modified"}
-                  </span>
-                  <span className="timeline-date">
-                    <DateComponent date={event.date} locale={locale} />
-                  </span>
-                  {event.folder && <span className="timeline-folder-mobile">{event.folder}</span>}
+      <div class="popover-hint">
+        <article class={classes}>
+          <p>{content}</p>
+        </article>
+        <div className="timeline">
+          <div className="timeline-container">
+            <div className="timeline-line"></div>
+            {events.map((event: TimelineEvent, i) => (
+              <div
+                key={`${event.slug}-${event.type}-${i}`}
+                className={`timeline-event ${i % 2 === 0 ? "left" : "right"}`}
+              >
+                <div className="timeline-connector">
+                  <div className="timeline-dot"></div>
+                  <div className="timeline-line-to-content"></div>
                 </div>
-                {event.folder && <div className="timeline-folder-desktop">{event.folder}</div>}
-              </div>
-              <div className="timeline-content">
-                <div className="timeline-header">
-                  <a href={"/" + event.slug} className="internal timeline-title">
-                    {event.title}
-                  </a>
+                <div className="timeline-metadata">
+                  <div className="timeline-type-date">
+                    <span className="timeline-type">
+                      {event.type === "created" ? "Created" : "Last modified"}
+                    </span>
+                    <span className="timeline-date">
+                      <DateComponent date={event.date} locale={locale} />
+                    </span>
+                    {event.folder && <span className="timeline-folder-mobile">{event.folder}</span>}
+                  </div>
+                  {event.folder && <div className="timeline-folder-desktop">{event.folder}</div>}
                 </div>
-                {/* IMAGE HERE */}
-                {event.image && (
-                  <div className="timeline-image">
+                <div className="timeline-content">
+                  <div className="timeline-header">
                     <a href={"/" + event.slug} className="internal timeline-title">
-                      <img src={event.image}/>
+                      {event.title}
                     </a>
                   </div>
-                )}
-                {/* DESCRIPTION HERE */}
-                {event.description && (
-                  <div className="timeline-description">
-                    <p>{event.description}</p>
-                  </div>
-                )}
-                <TagList tags={event.tags} slug={event.slug} displayClass="" />
+                  {/* IMAGE HERE */}
+                  {event.image && (
+                    <div className="timeline-image">
+                      <a href={"/" + event.slug} className="internal timeline-title">
+                        <img src={event.image}/>
+                      </a>
+                    </div>
+                  )}
+                  {/* DESCRIPTION HERE */}
+                  {event.description && (
+                    <div className="timeline-description">
+                      <p>{event.description}</p>
+                    </div>
+                  )}
+                  <TagList tags={event.tags} slug={event.slug} displayClass="" />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     )

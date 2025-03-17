@@ -170,7 +170,7 @@ const config: QuartzConfig = {
       Plugin.AliasRedirects(),
       Plugin.ComponentResources(),
       Plugin.ContentPage(),
-      Plugin.FolderPage(),
+      // Plugin.FolderPage(),
       Plugin.TimelineFolderPage(),
       Plugin.TimelineTagPage(),
       // Plugin.TagPage(),
