@@ -6,7 +6,7 @@ export const TOTAL_CARDS = 8
 
 export const getCards = (isIndex?: boolean) => ({
 
-    CV: (
+    Projects: (
         <a href={isIndex ? "/tags/CV" : "/"} target="_blank">
           <div class="card card-1">
             <p class="card-title highlight">My CV</p>
