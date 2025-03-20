@@ -44,7 +44,7 @@ const config: QuartzConfig = {
           dark: "", // header text, icons, inline and block code text, Layout header (explorer, graph view, table of contents) text, note names in explorer text
           secondary: "", // internal/external links, current graph node 
           tertiary: "", // internal/external links hover, visited graph node
-          highlight: " `", // internal link background, footnote number link highlight
+          highlight: "", // internal link background, footnote number link highlight
           textHighlight: "", // markdown highlighted text          
         },
         darkMode: {

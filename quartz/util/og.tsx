@@ -147,7 +147,9 @@ export const defaultImage: SocialImageOptions["imageStructure"] = (
   const fontBreakPoint = 22
   const useSmallerFont = title.length > fontBreakPoint
   const iconPath = `https://${cfg.baseUrl}/static/icon.png`
-
+  // Get tags if available
+  // const tags = fileData.frontmatter?.tags ?? [] <<original (but I didn't find it anywhere)
+  const tags = (_fileData.frontmatter?.tags ?? []).filter(tag => !tag.includes("-exclude"));
   return (
     <div
       style={{

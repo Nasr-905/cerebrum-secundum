@@ -3,17 +3,18 @@ import style from "./styles/backlinks.scss"
 import { resolveRelative, simplifySlug } from "../util/path"
 import { i18n } from "../i18n"
 import { classNames } from "../util/lang"
-
-interface BacklinksOptions {
+import { GlobalConfiguration } from "../cfg"
+ 
+interface Options {
+  excludeTags: string[]
   hideWhenEmpty: boolean
 }
-
-const defaultOptions: BacklinksOptions = {
-  hideWhenEmpty: true,
-}
-
-export default ((opts?: Partial<BacklinksOptions>) => {
-  const options: BacklinksOptions = { ...defaultOptions, ...opts }
+ 
+const defaultOptions = (cfg: GlobalConfiguration): Options => ({
+  excludeTags: [],
+  hideWhenEmpty: false,
+})
+export default ((userOpts?: Partial<Options>) => {
 
   const Backlinks: QuartzComponent = ({
     fileData,
@@ -22,10 +23,26 @@ export default ((opts?: Partial<BacklinksOptions>) => {
     cfg,
   }: QuartzComponentProps) => {
     const slug = simplifySlug(fileData.slug!)
-    const backlinkFiles = allFiles.filter((file) => file.links?.includes(slug))
-    if (options.hideWhenEmpty && backlinkFiles.length == 0) {
+
+    // Parse config
+    const opts = { ...defaultOptions, ...userOpts }
+    const _excludeTags = opts.excludeTags
+
+    // Get all files linking to this one
+    const unfilteredBacklinkFiles = allFiles.filter((file) => file.links?.includes(slug))
+
+    // Filter out files that have excluded tags
+    const backlinkFiles = unfilteredBacklinkFiles.filter((file) => {
+      const hasExcludeTag = _excludeTags?.some((tag: string) =>
+        file.frontmatter?.tags?.includes(tag)
+      );
+      return !hasExcludeTag;
+    });
+
+    if (opts.hideWhenEmpty && backlinkFiles.length === 0) {
       return null
     }
+
     return (
       <div class={classNames(displayClass, "backlinks")}>
         <h3>{i18n(cfg.locale).components.backlinks.title}</h3>

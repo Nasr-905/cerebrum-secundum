@@ -41,8 +41,9 @@ export const PageList: QuartzComponent = ({ cfg, fileData, allFiles, limit, sort
     <ul class="section-ul">
       {list.map((page) => {
         const title = page.frontmatter?.title
-        const tags = page.frontmatter?.tags ?? []
-
+        const unfilteredTags = page.frontmatter?.tags ?? []
+        const _excludeStrings = ["exclude"]
+        const tags = unfilteredTags.filter(tag => !_excludeStrings.some(excludeString => tag.includes(excludeString)));
         return (
           <li class="section-li">
             <div class="section">

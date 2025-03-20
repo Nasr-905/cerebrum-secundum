@@ -3,9 +3,13 @@ import * as Component from "./quartz/components"
 import { FileNode } from "./quartz/components/ExplorerNode"
 import { QuartzPluginData } from "./quartz/plugins/vfile"
 import { SimpleSlug } from "./quartz/util/path"
+
+const tagsToRemove = ["graph-exclude", "explorer-exclude", "backlinks-exclude", "recents-exclude", "search-exclude", "protected"];
+
 const explorerFilterFn = (node: FileNode) => {
   return !node.file?.frontmatter?.tags?.includes("explorer-exclude") && node.name !== "tags";
 };
+
 const filterByDirectory = (directory: string) => (f: QuartzPluginData) => {
   if (typeof f.relativePath === "string") {
     return f.relativePath.startsWith(directory + "/");
@@ -47,7 +51,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.Breadcrumbs(),
     Component.ArticleTitle(),
     Component.ContentMeta(),
-    Component.NotFor({ titles: ["contact"]}, Component.TagList()),
+    Component.TagList({ excludeTags: tagsToRemove }),
   ],
   afterBody: [
     Component.PageNav(),
@@ -56,6 +60,7 @@ export const defaultContentPageLayout: PageLayout = {
         limit: 5,
         linkToMore: "/Blog" as SimpleSlug,
         showTags: true,
+        excludeTags: ["recents-exclude"],
         filter: recentFilterFn,
       }),
     ),
@@ -86,7 +91,7 @@ export const defaultContentPageLayout: PageLayout = {
         linkDistance: 30, // how long should the links be by default?
         fontSize: 0.6, // what size should the node labels be?
         opacityScale: 1, // how quickly do we fade out the labels when zooming out?
-        removeTags: ["search-exclude", "explorer-exclude", "protected"], // what tags to remove from the graph
+        removeTags: tagsToRemove, // what tags to remove from the graph
         showTags: true, // whether to show tags in the graph
         enableRadial: false, // whether to constrain the graph, similar to Obsidian
       },
@@ -100,13 +105,16 @@ export const defaultContentPageLayout: PageLayout = {
         linkDistance: 30,
         fontSize: 0.3,
         opacityScale: 1,
-        removeTags: ["search-exclude", "explorer-exclude", "protected"],
+        removeTags: tagsToRemove,
         showTags: true,
         enableRadial: true,
       },
     }),
     Component.DesktopOnly(Component.TableOfContents()),
-    Component.Backlinks(),
+    Component.Backlinks({
+      excludeTags: tagsToRemove,
+      hideWhenEmpty: false,
+    }),
   ],
 }
 
