@@ -9,6 +9,7 @@ import { QuartzPluginData } from "../plugins/vfile"
 import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
 import { joinSegments, resolveRelative } from "../util/path"
+import { SimpleSlug } from "../util/path"
 
 interface OlOptions extends Omit<Options, "folderClickBehavior"> {
   folderClickBehavior: "collapse" | "link" | "mixed"

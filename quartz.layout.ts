@@ -73,7 +73,7 @@ export const defaultContentPageLayout: PageLayout = {
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
     Component.Darkmode(),
-    Component.MobileOnly(Component.OverlayExplorer()),
+    Component.MobileOnly(Component.OverlayExplorer({ filterFn: explorerFilterFn })),
     Component.DesktopOnly(Component.Explorer({ filterFn: explorerFilterFn })),
     Component.FloatingButtons({
       position: 'right',
